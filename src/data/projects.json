@@ -1,0 +1,27 @@
+[
+    {
+        "title": "PWA",
+        "description":"Intro Sentence about Project1 and it is long. The other stuff that no one cares about.",
+        "images":{
+            "thumbnail":"herdicon.jpg",
+            "main":"herdphone.png"
+        }
+    },
+    {
+        "title":"Project 2",
+        "description":"stuff about project2"
+    },
+    {
+        "title":"Project 3",
+        "description":"stuff about project3"
+    },
+    {
+        "title":"Project 4",
+        "description":"stuff about project4"
+    },
+    {
+        "title":"Project 5",
+        "description":"stuff about project5"
+    }
+]
+
