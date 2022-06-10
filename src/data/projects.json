@@ -1,6 +1,7 @@
 [
     {
         "title": "PWA",
+        "introSentence":"A progresive web app (PWA) about herd immunity.",
         "description":"Intro Sentence about Project1 and it is long. The other stuff that no one cares about.",
         "images":{
             "thumbnail":"herdicon.jpg",
@@ -8,20 +9,36 @@
         }
     },
     {
-        "title":"Project 2",
-        "description":"stuff about project2"
+        "title":"Interactive Animation",
+        "introSentence":"A JavaScript interactive animation.",
+        "description":"stuff about project2",
+        "images":{
+            "thumbnail":"switchCodepen.jpg"
+        }
     },
     {
-        "title":"Project 3",
-        "description":"stuff about project3"
+        "title":"Chrome Extension",
+        "introSentence":"A custom Chrome extension.",
+        "description":"stuff about project3",
+        "images":{
+            "thumbnail":"chrome-ext-code.jpg"
+        }
     },
     {
-        "title":"Project 4",
-        "description":"stuff about project4"
+        "title":"WordPress",
+        "introSentence":"A WordPress website for a non-profit.",
+        "description":"stuff about project4",
+        "images":{
+            "thumbnail":"heartoscope.org.jpg"
+        }
     },
     {
-        "title":"Project 5",
-        "description":"stuff about project5"
+        "title":"MTG API",
+        "introSentence":"A project using MTG’s API.",
+        "description":"stuff about project5",
+        "images":{
+            "thumbnail":"api.jpg"
+        }
     }
 ]
 

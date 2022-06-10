@@ -7,44 +7,49 @@ const Home = () => {
     return (
     <Container>
         <Grid container spacing={{ xs: 2, md: 3 }} >
-        <Grid item xs={12} sm={4} md={4} >
+        <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:1}}>
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <ProjectCardCont 
-                    nameOfProject='Project 4'
+                    nameOfProject='Interactive Animation'
                     sizeXS={12}
                     sizeSM={12}
                     sizeMD={12}
+                    customClass='ProductCardSide'
                     />
                     <ProjectCardCont 
-                    nameOfProject='Project 5'
+                    nameOfProject='Chrome Extension'
                     sizeXS={12}
                     sizeSM={12}
                     sizeMD={12}
+                    customClass='ProductCardSide'
                     />
                 </Grid>
+        </Grid>
+                <ProjectCardCont 
+                nameOfProject='PWA'
+                sizeXS={12}
+                sizeSM={6}
+                sizeMD={6}
+                order={{xs:1, sm:2}}
+                />
+        <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:3}}>
+            <Grid container spacing={{ xs: 2, md: 3 }} >
+                <ProjectCardCont 
+                nameOfProject='WordPress'
+                sizeXS={12}
+                sizeSM={12}
+                sizeMD={12}
+                customClass='ProductCardSide'
+                />
+                <ProjectCardCont 
+                nameOfProject='MTG API'
+                sizeXS={12}
+                sizeSM={12}
+                sizeMD={12}
+                customClass='ProductCardSide'
+                />
             </Grid>
-            <ProjectCardCont 
-            nameOfProject='PWA'
-            sizeXS={12}
-            sizeSM={4}
-            sizeMD={4}
-            />
-            <Grid item xs={12} sm={4} md={4} >
-                <Grid container spacing={{ xs: 2, md: 3 }} >
-                    <ProjectCardCont 
-                    nameOfProject='Project 4'
-                    sizeXS={12}
-                    sizeSM={12}
-                    sizeMD={12}
-                    />
-                    <ProjectCardCont 
-                    nameOfProject='Project 5'
-                    sizeXS={12}
-                    sizeSM={12}
-                    sizeMD={12}
-                    />
-                </Grid>
-            </Grid>
+        </Grid>
         </Grid>
     </Container>
     );

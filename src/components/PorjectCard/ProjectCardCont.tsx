@@ -2,11 +2,19 @@
 import Projects from '../../data/projects.json';
 import ProjectCardComp from './ProjectCardComp';
 
+
+interface Order{
+    xs?:number;
+    sm?:number;
+}
+
 interface ProjectCardContProps {
     nameOfProject:string;
     sizeXS:number;
     sizeSM:number;
     sizeMD:number;
+    customClass?:string;
+    order?:Order;
 }
 
 const ProjectCardCont = (props:ProjectCardContProps) => {
@@ -43,12 +51,14 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
     return (
         <ProjectCardComp 
     title={ProjectCards?.title}
-    description={ProjectCards?.description}
+    description={ProjectCards?.introSentence}
     pathURL={pathURL}
     imageThumbnail={ProjectCards?.images?.thumbnail}
     sizeXS={props.sizeXS}
     sizeSM={props.sizeSM}
     sizeMD={props.sizeMD}
+    order={props.order}
+    customClass={props.customClass}
     />
     );
 }

@@ -17,6 +17,11 @@ interface ProjectCardCompProps{
     sizeXS:number;
     sizeSM:number;
     sizeMD:number;
+    customClass?:string;
+    order?:{
+        xs?:number;
+        sm?:number;
+    };
     
 }
 
@@ -53,7 +58,7 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
     }
 
    return(
-    <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD}>
+    <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <Paper
          elevation={1} 
          onClick={handleClick}
@@ -64,12 +69,16 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
          }}}
          >
             <Box>
-                <img src={`/images/projects/${props?.title?.toLowerCase()}/${props.imageThumbnail}`} className="img" alt="" />
-                <Typography variant='h2' component='h2'>
+                <img 
+                    src={`assets/images/projects/${props?.title?.replaceAll(' ', '-').toLowerCase()}/${props.imageThumbnail}`} 
+                    className={`img ProductCardIMG ${props.customClass}`} 
+                    alt=""
+                    />
+                <Typography variant='h5' component='h2'>
                     {props.title}
                 </Typography>
                 <animated.div style={showAnin}>
-                    <animated.div ref={ref}>
+                    <animated.div ref={ref} style={{padding:'.5em'}}>
                         <Typography variant='body1' component='p'>
                             {props.description}
                         </Typography>
