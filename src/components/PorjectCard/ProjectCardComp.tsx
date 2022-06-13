@@ -56,16 +56,7 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
         }
            
        }
-
-    // function handleMouse() {
-        
-    //     if (showDesc === true) {
-    //         setShowDesc(false)
-    //     } else {
-    //         setShowDesc(true)
-    //     }
-    // }
-
+       
    return(
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <Paper
