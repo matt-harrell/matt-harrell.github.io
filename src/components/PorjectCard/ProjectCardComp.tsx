@@ -1,5 +1,5 @@
 import {Grid,Paper,Box, Typography} from '@mui/material';
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated, useSpringRef, useChain } from 'react-spring'
 import useMeasure from 'react-use-measure'
 
 import { useState } from 'react';
@@ -29,18 +29,26 @@ interface ProjectCardCompProps{
 
 const ProjectCardComp = (props:ProjectCardCompProps) =>{
 
-    const [showDesc,setShowDesc] = useState(true);
+    const [showDesc,setShowDesc] = useState(false);
     const [ref, { height: viewHeight }] = useMeasure()
 
+    const showAninRef = useSpringRef();
     const showAnin = useSpring({
-        opacity:showDesc ? 0 : 1,
-        height: showDesc ? 0 : viewHeight,
+        ref:showAninRef,
+        opacity:showDesc ? 1 : 0,
+        height: showDesc ? viewHeight : 0,
         config:{duration:200},
-        
+    })
+    
+    const hideDescRef = useSpringRef();
+    const hideDesc = useSpring({
+        display: showDesc ? 'block' : 'none',
+        ref:hideDescRef,
+    })
 
-    }) 
+    useChain([showAninRef,hideDescRef],[0, 0.2])
 
-    function handleClick() {
+    function handleClickAndMouse() {
         if (showDesc === true) {
             setShowDesc(false)
         } else {
@@ -49,21 +57,22 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
            
        }
 
-    function handleMouse() {
-        if (showDesc === true) {
-            setShowDesc(false)
-        } else {
-            setShowDesc(true)
-        }
-    }
+    // function handleMouse() {
+        
+    //     if (showDesc === true) {
+    //         setShowDesc(false)
+    //     } else {
+    //         setShowDesc(true)
+    //     }
+    // }
 
    return(
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <Paper
          elevation={1} 
-         onClick={handleClick}
-         onMouseEnter={handleMouse}
-         onMouseLeave={handleMouse}
+         onClick={handleClickAndMouse}
+         onMouseEnter={handleClickAndMouse}
+         onMouseLeave={handleClickAndMouse}
          sx={{'&:hover':{
              cursor:'pointer'
          }}}
@@ -77,7 +86,7 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
                 <Typography variant='h5' component='h2'>
                     {props.title}
                 </Typography>
-                <animated.div style={showAnin}>
+                <animated.div style={{opacity:showAnin.opacity,height:showAnin.height,display:hideDesc.display}}>
                     <animated.div ref={ref} style={{padding:'.5em'}}>
                         <Typography variant='body1' component='p'>
                             {props.description}
