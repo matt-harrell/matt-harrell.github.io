@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material';
 
 
 import './App.css';
@@ -10,11 +11,46 @@ import Home from './pages/home'
 import PWA from './pages/pwa';
 
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    bgGrey: Palette['primary'];
+  }
+  interface PaletteOptions {
+    bgGrey: PaletteOptions['primary'];
+  }
+}
 
 
+
+
+
+
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: '#212529',
+    },
+    bgGrey:{
+      main: '#f1f1f1',
+    },
+  },
+});
+
+theme = createTheme(theme, {
+  components:{
+    MuiPaper:{
+      styleOverrides:{
+        root:{
+          backgroundColor:theme.palette.bgGrey.main
+        },
+      },
+    },
+  },
+});
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <Router>
       <NavBarCont/>
       <Routes>
@@ -22,6 +58,7 @@ function App() {
         <Route path='/pwa' element={<PWA/>}/>
       </Routes>
     </Router>
+    </ThemeProvider>
   );
 }
 

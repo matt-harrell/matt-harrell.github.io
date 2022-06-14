@@ -1,6 +1,7 @@
 body{
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  background-color: #e6e6e6;
 }
 .img{
   max-width: 100%;
