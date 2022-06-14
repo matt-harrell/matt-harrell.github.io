@@ -3,7 +3,7 @@ import { useSpring, animated, useSpringRef, useChain } from 'react-spring'
 import useMeasure from 'react-use-measure'
 
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -29,6 +29,8 @@ interface ProjectCardCompProps{
 
 const ProjectCardComp = (props:ProjectCardCompProps) =>{
 
+    let navigate = useNavigate();
+
     const [showDesc,setShowDesc] = useState(false);
     const [ref, { height: viewHeight }] = useMeasure()
 
@@ -48,24 +50,34 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
 
     useChain([showAninRef,hideDescRef],[0, 0.2])
 
-    function handleClickAndMouse() {
-        if (showDesc === true) {
-            setShowDesc(false)
-        } else {
+    function handleClick() {
+        const url = props.pathURL || '/';
+
+        if (showDesc === false) {
             setShowDesc(true)
+        } else{
+            navigate(url, { replace: true });
         }
            
        }
+    
+
+    function handleMouseLeave() {
+        if (showDesc === true) {
+            setShowDesc(false)
+        }    
+    }
        
    return(
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <Paper
          elevation={1} 
-         onClick={handleClickAndMouse}
-         onMouseEnter={handleClickAndMouse}
-         onMouseLeave={handleClickAndMouse}
-         sx={{'&:hover':{
-             cursor:'pointer'
+         onClick={handleClick}
+        //  onMouseEnter={handleClickAndMouse}
+         onMouseLeave={handleMouseLeave}
+         sx={{
+            '&:hover':{
+             cursor:'pointer',
          }}}
          >
             <Box>
