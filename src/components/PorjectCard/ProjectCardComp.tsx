@@ -8,6 +8,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 
+interface OpacityAnim{
+    opacity:number | 1;
+}
+
 
 interface ProjectCardCompProps{
     title?:string;
@@ -22,6 +26,7 @@ interface ProjectCardCompProps{
         xs?:number;
         sm?:number;
     };
+    opacityAnim?:number;
     
 }
 
@@ -67,8 +72,9 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
             setShowDesc(false)
         }    
     }
-       
+
    return(
+    
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <Paper
          elevation={1} 
@@ -104,5 +110,6 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
     </Grid>
    );
 }
+
 
 export default ProjectCardComp;

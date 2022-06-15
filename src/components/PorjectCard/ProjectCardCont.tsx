@@ -18,7 +18,6 @@ interface ProjectCardContProps {
 }
 
 const ProjectCardCont = (props:ProjectCardContProps) => {
-   
 
    const ProjectCards = Projects.find(({title}) => title === props.nameOfProject);
    
@@ -46,10 +45,10 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
 
 //    let description = ProjectCards?.description;
 //    let introSentence = description?.split('.')
-    
+
 
     return (
-        <ProjectCardComp 
+    <ProjectCardComp 
     title={ProjectCards?.title}
     description={ProjectCards?.introSentence}
     pathURL={pathURL}
@@ -63,4 +62,4 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
     );
 }
 
-export default ProjectCardCont;
+export default ProjectCardCont ;
