@@ -1,16 +1,9 @@
 import {Grid,Paper,Box, Typography} from '@mui/material';
-import { useSpring, animated, useSpringRef, useChain } from 'react-spring'
+import { useSpring, animated, useSpringRef, useChain, } from 'react-spring'
 import useMeasure from 'react-use-measure'
 
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-
-
-
-
-interface OpacityAnim{
-    opacity:number | 1;
-}
 
 
 interface ProjectCardCompProps{
@@ -26,7 +19,7 @@ interface ProjectCardCompProps{
         xs?:number;
         sm?:number;
     };
-    opacityAnim?:number;
+    style?:any;
     
 }
 
@@ -76,37 +69,39 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
    return(
     
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
-        <Paper
-         elevation={1} 
-         onClick={handleClick}
-        //  onMouseEnter={handleClickAndMouse}
-         onMouseLeave={handleMouseLeave}
-         sx={{
-            '&:hover':{
-             cursor:'pointer',
-         }}}
-         >
-            <Box>
-                <img 
-                    src={`assets/images/projects/${props?.title?.replaceAll(' ', '-').toLowerCase()}/${props.imageThumbnail}`} 
-                    className={`img ProductCardIMG ${props.customClass}`} 
-                    alt=""
-                    />
-                <Typography variant='h5' component='h2'>
-                    {props.title}
-                </Typography>
-                <animated.div style={{opacity:showAnin.opacity,height:showAnin.height,display:hideDesc.display}}>
-                    <animated.div ref={ref} style={{padding:'.5em'}}>
-                        <Typography variant='body1' component='p'>
-                            {props.description}
-                        </Typography>
-                        <Typography variant='body1' component='p'>
-                            <Link to={props.pathURL || '/'}>Go to {props.title}</Link>
-                        </Typography>
+        <animated.div style={{...props.style}}>
+            <Paper
+            elevation={1} 
+            onClick={handleClick}
+            //  onMouseEnter={handleClickAndMouse}
+            onMouseLeave={handleMouseLeave}
+            sx={{
+                '&:hover':{
+                cursor:'pointer',
+            }}}
+            >
+                <Box>
+                    <img 
+                        src={`assets/images/projects/${props?.title?.replaceAll(' ', '-').toLowerCase()}/${props.imageThumbnail}`} 
+                        className={`img ProductCardIMG ${props.customClass}`} 
+                        alt=""
+                        />
+                    <Typography variant='h5' component='h2'>
+                        {props.title}
+                    </Typography>
+                    <animated.div style={{opacity:showAnin.opacity,height:showAnin.height,display:hideDesc.display}}>
+                        <animated.div ref={ref} style={{padding:'.5em'}}>
+                            <Typography variant='body1' component='p'>
+                                {props.description}
+                            </Typography>
+                            <Typography variant='body1' component='p'>
+                                <Link to={props.pathURL || '/'}>Go to {props.title}</Link>
+                            </Typography>
+                        </animated.div>
                     </animated.div>
-                </animated.div>
-            </Box>
-        </Paper>
+                </Box>
+            </Paper>
+        </animated.div>
     </Grid>
    );
 }

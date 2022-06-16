@@ -1,4 +1,3 @@
-
 import Projects from '../../data/projects.json';
 import ProjectCardComp from './ProjectCardComp';
 
@@ -15,6 +14,7 @@ interface ProjectCardContProps {
     sizeMD:number;
     customClass?:string;
     order?:Order;
+    style?:any;
 }
 
 const ProjectCardCont = (props:ProjectCardContProps) => {
@@ -58,6 +58,7 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
     sizeMD={props.sizeMD}
     order={props.order}
     customClass={props.customClass}
+    style={props.style}
     />
     );
 }

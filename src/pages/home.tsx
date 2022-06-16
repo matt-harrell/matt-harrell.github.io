@@ -1,5 +1,5 @@
 import { Grid,Container } from '@mui/material';
-import { animated,useChain, useSpringRef, useSpring } from 'react-spring';
+import { useChain, useSpringRef, useSpring } from 'react-spring';
 
 import ProjectCardCont from '../components/PorjectCard/ProjectCardCont';
 
@@ -11,27 +11,38 @@ const Home = () => {
 
     let mobileAnim = undefined;
 
-    const project1AnimRef = useSpringRef();
-    const project1Anim = useSpring({
-        ref:project1AnimRef,
-        from:{opacity:0},
-        to:{opacity:1},
-        config:{duration:1000}
+    const fadeInLeftRef = useSpringRef();
+    const fadeInLeft = useSpring({
+        ref:fadeInLeftRef,
+        from:{opacity:0,x:-250},
+        to:{opacity:1,x:0},
+        config:{duration:400}
     })
 
-    const project1AnimResponsive = (window.screen.width > 600) ? project1Anim : mobileAnim;
+    const fadeInLeftResponsive = (window.screen.width > 600) ? fadeInLeft : mobileAnim;
 
-    const project2AnimRef = useSpringRef();
-    const project2Anim = 
+    const fadeInRightRef = useSpringRef();
+    const fadeInRight = 
     useSpring({
-        delay:500,
-        ref:project1AnimRef,
-        from:{opacity:0},
-        to:{opacity:1},
-        config:{duration:1000}
+        ref:fadeInRightRef,
+        from:{opacity:0,x:250},
+        to:{opacity:1,x:0},
+        config:{duration:400}
     })
 
-useChain([project1AnimRef,project2AnimRef])
+    const fadeInRightResponsive = (window.screen.width > 600) ? fadeInRight : mobileAnim;
+
+    const fadeDownRef = useSpringRef();
+    const fadeDown = useSpring({
+        ref:fadeDownRef,
+        from:{opacity:0,y:-250},
+        to:{opacity:1,y:0},
+        config:{duration:400}
+    })
+
+    const fadeDownResponsive = (window.screen.width > 600) ? fadeDown : mobileAnim;
+
+    useChain([fadeInLeftRef,fadeInRightRef,fadeDownRef],[0,.2,.4])
 
     return (
     <Container>
@@ -39,26 +50,24 @@ useChain([project1AnimRef,project2AnimRef])
         <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:1}}>
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <Grid item xs={12}>
-                        <animated.div style={project1AnimResponsive}>
-                            <ProjectCardCont 
-                            nameOfProject='Interactive Animation'
-                            sizeXS={12}
-                            sizeSM={12}
-                            sizeMD={12}
-                            customClass='ProductCardSide'
-                            />
-                        </animated.div>
+                        <ProjectCardCont 
+                        nameOfProject='Interactive Animation'
+                        sizeXS={12}
+                        sizeSM={12}
+                        sizeMD={12}
+                        customClass='ProductCardSide'
+                        style={fadeInLeftResponsive}
+                        />
                     </Grid>
                     <Grid item xs={12}>
-                        <animated.div style={project2Anim}>
-                            <ProjectCardCont 
-                            nameOfProject='Chrome Extension'
-                            sizeXS={12}
-                            sizeSM={12}
-                            sizeMD={12}
-                            customClass='ProductCardSide'
-                            />
-                        </animated.div>
+                        <ProjectCardCont 
+                        nameOfProject='Chrome Extension'
+                        sizeXS={12}
+                        sizeSM={12}
+                        sizeMD={12}
+                        customClass='ProductCardSide'
+                        style={fadeInLeftResponsive}
+                        />
                     </Grid>
                 </Grid>
         </Grid>
@@ -68,6 +77,7 @@ useChain([project1AnimRef,project2AnimRef])
                 sizeSM={6}
                 sizeMD={6}
                 order={{xs:1, sm:2}}
+                style={fadeDownResponsive}
                 />
         <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >
@@ -77,6 +87,7 @@ useChain([project1AnimRef,project2AnimRef])
                 sizeSM={12}
                 sizeMD={12}
                 customClass='ProductCardSide'
+                style={fadeInRightResponsive}
                 />
                 <ProjectCardCont 
                 nameOfProject='MTG API'
@@ -84,6 +95,7 @@ useChain([project1AnimRef,project2AnimRef])
                 sizeSM={12}
                 sizeMD={12}
                 customClass='ProductCardSide'
+                style={fadeInRightResponsive}
                 />
             </Grid>
         </Grid>
