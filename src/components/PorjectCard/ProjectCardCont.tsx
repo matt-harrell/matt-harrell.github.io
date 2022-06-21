@@ -19,7 +19,7 @@ interface ProjectCardContProps {
 
 const ProjectCardCont = (props:ProjectCardContProps) => {
 
-   const ProjectCards = Projects.find(({title}) => title === props.nameOfProject);
+   const ProjectCards = Projects.find((project) => project.title.thumbnail === props.nameOfProject);
    
 //    ProjectCards?.map((project:Project,i:number) => 
 //    {
@@ -40,7 +40,7 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
 //     />
 //     });
 
-    let path = ProjectCards?.title;
+    let path = ProjectCards?.title.thumbnail;
    let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
 //    let description = ProjectCards?.description;
@@ -49,7 +49,7 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
 
     return (
     <ProjectCardComp 
-    title={ProjectCards?.title}
+    title={ProjectCards?.title.thumbnail}
     description={ProjectCards?.introSentence}
     pathURL={pathURL}
     imageThumbnail={ProjectCards?.images?.thumbnail}
