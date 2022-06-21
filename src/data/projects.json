@@ -1,6 +1,9 @@
 [
     {
-        "title": "PWA",
+        "title": {
+            "thumbnail":"PWA",
+            "page":"Progressive Web App"
+        },
         "introSentence":"A progresive web app (PWA) about herd immunity.",
         "description":"Intro Sentence about Project1 and it is long. The other stuff that no one cares about.",
         "images":{
@@ -9,7 +12,10 @@
         }
     },
     {
-        "title":"Interactive Animation",
+        "title": {
+            "thumbnail":"Interactive Animation",
+            "page":"Interactive Animation"
+        },
         "introSentence":"A JavaScript interactive animation.",
         "description":"stuff about project2",
         "images":{
@@ -17,7 +23,10 @@
         }
     },
     {
-        "title":"Chrome Extension",
+        "title": {
+            "thumbnail":"Chrome Extension",
+            "page":"Chrome Extension"
+        },
         "introSentence":"A custom Chrome extension.",
         "description":"stuff about project3",
         "images":{
@@ -25,7 +34,10 @@
         }
     },
     {
-        "title":"WordPress",
+        "title": {
+            "thumbnail":"WordPress",
+            "page":"WordPress"
+        },
         "introSentence":"A WordPress website for a non-profit.",
         "description":"stuff about project4",
         "images":{
@@ -33,7 +45,10 @@
         }
     },
     {
-        "title":"MTG API",
+        "title": {
+            "thumbnail":"MTG API",
+            "page":"MTG API"
+        },
         "introSentence":"A project using MTG’s API.",
         "description":"stuff about project5",
         "images":{
