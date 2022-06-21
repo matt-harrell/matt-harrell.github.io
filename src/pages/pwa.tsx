@@ -1,15 +1,11 @@
-import Projects from "../data/projects.json";
-
-const Project1Data = Projects.find(({title}) => title === 'PWA');
+import ProjoctIntroCont from "../components/ProjectIntro/ProjectIntroCont";
 
 const PWA = () => {
 
     return (
-        <>
-        <h2>test</h2>
-            <h1>{Project1Data?.title}</h1>
-            <p>{Project1Data?.description}</p>
-        </>
+        <ProjoctIntroCont
+        nameOfProject="Progressive Web App"
+        />
     );
 }
 
