@@ -54,7 +54,7 @@ theme = createTheme(theme, {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <Router basename='/matt-harrell.github.io'>
+    <Router>
       <NavBarCont/>
       <Routes>
         <Route path='/' element={<Home/>}/>
