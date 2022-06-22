@@ -30,6 +30,9 @@ let theme = createTheme({
     primary: {
       main: '#212529',
     },
+    secondary:{
+      main:'#2aa236'
+    },
     bgGrey:{
       main: '#f1f1f1',
     },
