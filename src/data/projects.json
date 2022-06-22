@@ -5,11 +5,31 @@
             "page":"Progressive Web App"
         },
         "introSentence":"A progresive web app (PWA) about herd immunity.",
-        "description":"Intro Sentence about Project1 and it is long. The other stuff that no one cares about.",
+        "description":"I created progressive web app or PWA(which is an app created using, HTML, CSS and JavaScript than can run in a browser or any device) that addresses the problem of the reduction of parents vaccinating their children. The desired outcome for this app is to persuade vaccine hesitant parents that vaccines are not just for their children but are needed to protect other children who can’t get vaccinated. Within the app, I used different storytelling techniques and interactive experiences to build to build an empathic argument that vaccines are needed for herd immunity.",
         "images":{
             "thumbnail":"herdicon.jpg",
             "main":"herdphone.png"
-        }
+        },
+        "projectLinks":{
+            "gitHub":{
+                "link":"https://github.com/matt-harrell/Have-you-Herd-",
+                "text":"GitHub"
+            },
+            "website":{
+                "link":"https://github.com/matt-harrell/Have-you-Herd-",
+                "text":"Have You Heard?"
+            }
+        },
+        "skills":[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap",
+            "SASS",
+            "JQuery",
+            "GreenSock",
+            "Email.js"
+        ]
     },
     {
         "title": {
@@ -20,6 +40,16 @@
         "description":"stuff about project2",
         "images":{
             "thumbnail":"switchCodepen.jpg"
+        },
+        "projectLinks":{
+            "gitHub":{
+                "link":"https://github.com/matt-harrell/Have-you-Herd-",
+                "text":"GitHub"
+            },
+            "website":{
+                "link":"https://github.com/matt-harrell/Have-you-Herd-",
+                "text":"Have You Heard?"
+            }
         }
     },
     {
