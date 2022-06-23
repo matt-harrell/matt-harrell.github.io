@@ -1,4 +1,4 @@
-import { Typography,List,ListItem, ListItemText, Box} from '@mui/material';
+import { Typography,List,ListItem, Box} from '@mui/material';
 import Projects from '../../data/projects.json';
 import ProjectIntroComp from './ProjectIntroComp';
 

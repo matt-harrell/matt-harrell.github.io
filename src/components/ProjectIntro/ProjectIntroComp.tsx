@@ -1,4 +1,4 @@
-import {Grid,Box,Typography,List,ListItem, ListItemText,ListItemIcon, Container } from '@mui/material';
+import {Grid,Typography,List,ListItem, ListItemText,ListItemIcon, Container } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 
 import { ProjectIntroContProps } from './ProjectIntroCont';
