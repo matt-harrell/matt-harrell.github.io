@@ -22,23 +22,24 @@ interface links {
 const ProjoctIntroCont = (props:ProjectIntroContProps) =>{
     const Project = Projects.find((project) => project.title.page === props.nameOfProject);
 
-    let gitHubLink = null;
-    if (Project?.projectLinks?.gitHub !== undefined){
-        gitHubLink = <ListItem><a href={Project?.projectLinks?.gitHub?.link}>{Project?.projectLinks?.gitHub?.text}</a></ListItem>
-    }
-
     let websiteLinks;
-    if (Project?.projectLinks?.website !== undefined){
-        websiteLinks = <ListItem><a href={Project?.projectLinks?.website?.link}>{Project?.projectLinks?.website?.text}</a></ListItem>
+    if (Project?.projectLinks !== undefined){
+        const ProjectLinks = Project?.projectLinks;
+       websiteLinks = ProjectLinks.map((Projectlink,index) =>
+
+       <ListItem key={index}><a href={Projectlink.link}>{Projectlink.text}</a></ListItem>
+
+       )
+       
+       
     }
 
     let linksElement;
-    if (gitHubLink || websiteLinks !== undefined){
+    if (websiteLinks !== undefined){
         linksElement =
         <Box> 
             <Typography variant='h4' component='h2'>Project Links</Typography>
                 <List>
-                    {gitHubLink}
                     {websiteLinks}
                 </List>
         </Box>
