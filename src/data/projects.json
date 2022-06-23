@@ -37,10 +37,16 @@
             "page":"Interactive Animation"
         },
         "introSentence":"A JavaScript interactive animation.",
-        "description":"stuff about project2",
+        "description":"This is an interactive animation I created that uses counters and conditional statements to create an animation that only occur if certain interactions are completed.",
         "images":{
             "thumbnail":"switchCodepen.jpg"
         },
+        "projectLinks":[
+            {
+            "link":"https://codepen.io/mharrell8/pen/JjKBgrN",
+            "text":"View on CodePen"
+            }
+        ],
         "skills":[
             "HTML",
             "CSS",
@@ -55,10 +61,20 @@
             "page":"Chrome Extension"
         },
         "introSentence":"A custom Chrome extension.",
-        "description":"stuff about project3",
+        "description":"This is an extension that can remove cookies from the current webpage with the press of the “g” key.",
         "images":{
             "thumbnail":"chrome-ext-code.jpg"
-        }
+        },
+        "projectLinks":[
+            {
+            "link":"https://github.com/matt-harrell/Cookie-Monster-v6.7-Final-",
+            "text":"GitHub"
+            }
+        ],
+        "skills":[
+            "HTML",
+            "JavaScript"
+        ]
     },
     {
         "title": {
@@ -66,10 +82,23 @@
             "page":"WordPress"
         },
         "introSentence":"A WordPress website for a non-profit.",
-        "description":"stuff about project4",
+        "description":"This is a website I created for a nonprofit called Heartoscope, a nonprofit in Greenville, NC, using the Divi, a custom WordPress theme builder. When I was creating this website, I collaborated with a designer and content strategist to translate their designs and strategy into a working website. I also used Google Lighthouse to address several audits to make the website accessible and mobile optimized while incorporating SEO strategies. In order to help the client with managing their website, I also created several YouTube videos to help train the client on how to use Divi.",
         "images":{
             "thumbnail":"heartoscope.org.jpg"
-        }
+        },
+        "projectLinks":[
+            {
+            "link":"https://heartoscope.org/",
+            "text":"Go to Heartoscope.org"
+            }
+        ],
+        "skills":[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "WordPress",
+            "Divi"
+        ]
     },
     {
         "title": {
