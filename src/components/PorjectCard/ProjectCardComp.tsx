@@ -46,9 +46,14 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
         ref:hideDescRef,
     })
 
+    const overlayAnin = useSpring({
+        opacity:showDesc ? 1 : 0,
+        config:{duration:200},
+    })
+
     useChain([showAninRef,hideDescRef],[0, 0.2])
 
-    function handleClick() {
+    function handleClickHover() {
         const url = props.pathURL || '/';
 
         if (showDesc === false) {
@@ -71,9 +76,9 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
     <Grid item xs={props.sizeXS} sm={props.sizeSM} md={props.sizeMD} order={props.order}>
         <animated.div style={{...props.style}}>
             <Paper
-            elevation={1} 
-            onClick={handleClick}
-            //  onMouseEnter={handleClickAndMouse}
+            elevation={1}
+            onMouseEnter={handleClickHover} 
+            onClick={handleClickHover}
             onMouseLeave={handleMouseLeave}
             sx={{
                 '&:hover':{
@@ -81,11 +86,18 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
             }}}
             >
                 <Box>
-                    <img 
-                        src={`assets/images/projects/${props?.title?.replaceAll(' ', '-').toLowerCase()}/${props.imageThumbnail}`} 
-                        className={`img ProductCardIMG ${props.customClass}`} 
-                        alt=""
+                    <Box sx={{position:"relative"}}>
+                        <img 
+                            src={`assets/images/projects/${props?.title?.replaceAll(' ', '-').toLowerCase()}/${props.imageThumbnail}`} 
+                            className={`img ProductCardIMG ${props.customClass}`} 
+                            alt=""
                         />
+                        <animated.div style={{position:"absolute",top:0,backgroundColor:"#00000099",width:"100%",height:"99%",display:"flex",justifyContent:"center",alignItems:"center",opacity:overlayAnin.opacity}}>
+                            <Typography variant='h3' component='p' sx={{textAlign:"center",color:"white"}}>
+                                Click to View
+                            </Typography>
+                        </animated.div>
+                    </Box>
                     <Typography variant='h5' component='h2'>
                         {props.title}
                     </Typography>
