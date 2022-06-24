@@ -53,8 +53,7 @@ const NavBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component="p"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -65,7 +64,9 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <NavLink to="/" style={{textDecoration:'none',color:'unset'}}>
+              Matt Harrll
+            </NavLink>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -113,8 +114,7 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="/"
+            component="p"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -126,7 +126,9 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            <NavLink to="/" style={{textDecoration:'none',color:'unset'}}>
+              Matt Harrll
+            </NavLink>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
