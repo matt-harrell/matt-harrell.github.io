@@ -1,15 +1,14 @@
-import {Grid,Typography,List,ListItem, ListItemText,ListItemIcon, Container } from '@mui/material';
-import DoneIcon from '@mui/icons-material/Done';
+import {Grid,Typography, Container } from '@mui/material';
 
 import { ProjectIntroContProps } from './ProjectIntroCont';
 
 
 const ProjectIntroComp = (props:ProjectIntroContProps) => {
     
-    const skills = props.skills || [];
-    let skillsHalf = Math.floor(skills.length / 2);
-    let skillsFirstHalf = skills?.slice(0, skillsHalf);
-    let skillsSecondHalf = skills?.slice(skillsHalf, skills?.length);
+    // const skills = props.skills || [];
+    // let skillsHalf = Math.floor(skills.length / 2) + 1;
+    // let skillsFirstHalf = skills?.slice(0, skillsHalf);
+    // let skillsSecondHalf = skills?.slice(skillsHalf, skills?.length);
 
     return(
         <Container>
@@ -39,7 +38,7 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                     <Typography variant='h4' component='h2'>
                         Skills
                     </Typography>
-                    <Grid container spacing={{ xs: 2, md: 3 }}>
+                    {/* <Grid container spacing={{xs:1}}>
                         <Grid item xs={6}>
                             <List>
                                 {skillsFirstHalf.map((skill,index) => {
@@ -55,7 +54,7 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                             </List>
                         </Grid>
                         <Grid item xs={6}>
-                            <ul>
+                            <List>
                                 {skillsSecondHalf.map((skill,index) => {
                                     return(
                                         <ListItem key={index} sx={{padding:0}}>
@@ -66,9 +65,10 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                                         </ListItem>
                                     )
                                 })}
-                            </ul>
+                            </List>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
+                    {props.skillsElement}
                     <Typography variant='h4' component='h2'>
                         Description
                     </Typography>
