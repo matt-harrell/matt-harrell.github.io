@@ -1,3 +1,7 @@
+:root{
+  --secondary:#2aa236;
+}
+
 body{
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -6,6 +10,10 @@ body{
 .img{
   max-width: 100%;
   height: auto;
+}
+
+.projectImg{
+  margin: auto 0;
 }
 
 .ProductCardIMG {
@@ -21,8 +29,9 @@ body{
 .greenBorder{
   height:2px;
   width: 15rem;
-  color:gray;
-  background-color:gray
+  margin: .5em auto 1em;
+  color:var(--secondary);
+  background-color:var(--secondary)
 }
 
 

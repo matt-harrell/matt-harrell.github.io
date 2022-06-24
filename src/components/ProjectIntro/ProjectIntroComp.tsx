@@ -25,9 +25,9 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
             <hr className='greenBorder'></hr>
             <Grid container spacing={{ xs: 2, md: 3 }}>
                 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} sx={{display:"flex"}}>
                     <img
-                        className='img' 
+                        className='img projectImg' 
                         src={`assets/images/projects/${props.imagePath}/${props.image}`} 
                         alt=""
                     />
@@ -38,36 +38,6 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                     <Typography variant='h4' component='h2'>
                         Skills
                     </Typography>
-                    {/* <Grid container spacing={{xs:1}}>
-                        <Grid item xs={6}>
-                            <List>
-                                {skillsFirstHalf.map((skill,index) => {
-                                    return(
-                                        <ListItem key={index} sx={{padding:0}}>
-                                            <ListItemIcon>
-                                                <DoneIcon color='secondary'/>
-                                            </ListItemIcon>
-                                            <ListItemText primary={skill} sx={{color:"black"}}/>                                    
-                                        </ListItem>
-                                    )
-                                })}
-                            </List>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <List>
-                                {skillsSecondHalf.map((skill,index) => {
-                                    return(
-                                        <ListItem key={index} sx={{padding:0}}>
-                                            <ListItemIcon>
-                                                <DoneIcon color='secondary'/>
-                                            </ListItemIcon>
-                                            <ListItemText primary={skill} sx={{color:"black"}}/>                                    
-                                        </ListItem>
-                                    )
-                                })}
-                            </List>
-                        </Grid>
-                    </Grid> */}
                     {props.skillsElement}
                     <Typography variant='h4' component='h2'>
                         Description
