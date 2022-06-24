@@ -49,7 +49,7 @@ const ProjoctIntroCont = (props:ProjectIntroContProps) =>{
         <ProjectIntroComp
             title={Project?.title.page}
             skills={Project?.skills}
-            image={Project?.images.main}
+            image={Project?.images.main || Project?.images.thumbnail}
             imagePath={Project?.title.thumbnail.replaceAll(' ', '-').toLowerCase()}
             Desc={Project?.description}
             linksElement={linksElement}

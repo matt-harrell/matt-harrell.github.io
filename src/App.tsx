@@ -7,8 +7,12 @@ import './App.css';
 import NavBarCont from './components/Navbar/NavBarCont';
 
 // pages
-import Home from './pages/home'
+import Home from './pages/home';
 import PWA from './pages/pwa';
+import InteractiveAnimation from './pages/InteractiveAnimation'
+import WordPress from './pages/WordPress';
+import MTGAPI from './pages/mtgAPI';
+import ChromeExtension from './pages/ChromeExtentsion';
 
 
 declare module '@mui/material/styles' {
@@ -59,6 +63,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/pwa' element={<PWA/>}/>
+        <Route path='/interactive-animation' element={<InteractiveAnimation/>}/>
+        <Route path='/wordpress' element={<WordPress/>}/>
+        <Route path='/mtg-api' element={<MTGAPI/>}/>
+        <Route path='/chrome-extension' element={<ChromeExtension/>}/>
       </Routes>
     </Router>
     </ThemeProvider>
