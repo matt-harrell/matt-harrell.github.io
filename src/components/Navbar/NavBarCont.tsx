@@ -20,7 +20,8 @@ import Projects from '../../data/projects.json';
 
 
 const projectPages = Projects.map(project => project.title);
-const pages = ['PWA'];
+const pages = ['Projects','Resume','Contact'];
+// make projects go to home and have submenu
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
