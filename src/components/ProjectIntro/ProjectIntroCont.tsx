@@ -1,6 +1,10 @@
 import {Grid,Typography,List,ListItem, ListItemText,ListItemIcon, Box } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
+
+import { useEffect, useState } from 'react';
+
 import Projects from '../../data/projects.json';
+
 import ProjectIntroComp from './ProjectIntroComp';
 
 
@@ -25,6 +29,17 @@ interface links {
 
 const ProjoctIntroCont = (props:ProjectIntroContProps) =>{
     const Project = Projects.find((project) => project.title.page === props.nameOfProject);
+
+    const [title, setTitle] =useState("Matt's Portfolio");
+
+    // const pageTitle = setTitle(Project.title.page) || "Matt's Portfolio";
+
+    useEffect(()=>{
+        setTitle(String(Project?.title.page))
+        document.title = `${title} | Matt's Portfolio`;
+    }, [Project?.title.page, title]);
+
+    
 
     let websiteLinks;
     if (Project?.projectLinks !== undefined){
