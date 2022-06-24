@@ -1,6 +1,8 @@
 import { Grid,Container } from '@mui/material';
 import { useChain, useSpringRef, useSpring } from 'react-spring';
 
+import { useEffect } from 'react';
+
 import ProjectCardCont from '../components/PorjectCard/ProjectCardCont';
 
 
@@ -8,6 +10,10 @@ import ProjectCardCont from '../components/PorjectCard/ProjectCardCont';
 
 
 const Home = () => {
+
+    useEffect(() =>{
+        document.title = "Matt's Portfolio";
+    })
 
     let mobileAnim = undefined;
 
