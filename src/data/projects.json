@@ -106,10 +106,21 @@
             "page":"MTG API"
         },
         "introSentence":"A project using MTG’s API.",
-        "description":"stuff about project5",
+        "description":" I used Magic the Gathering’s API, an API based on a table to card game, to create a program that would query the API based on a user's search input. The  API would return an image of the card, name of the card art artist, name of set and rarity of the card.",
         "images":{
             "thumbnail":"api.jpg"
-        }
+        },
+        "projectLinks":[
+            {
+            "link":"https://codepen.io/mharrell8/pen/RwGPpvG",
+            "text":"View on CodePen"
+            }
+        ],
+        "skills":[
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
     }
 ]
 
