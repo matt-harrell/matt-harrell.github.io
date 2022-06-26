@@ -52,7 +52,7 @@ const Home = () => {
 
     return (
     <Container>
-        <Grid container spacing={{ xs: 2, md: 3 }} >
+        <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} >
         <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:1}}>
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <Grid item xs={12}>
@@ -61,7 +61,7 @@ const Home = () => {
                         sizeXS={12}
                         sizeSM={12}
                         sizeMD={12}
-                        customClass='ProductCardSide'
+                        customClass='ProjectCardSide'
                         style={fadeInLeftResponsive}
                         />
                     </Grid>
@@ -71,7 +71,7 @@ const Home = () => {
                         sizeXS={12}
                         sizeSM={12}
                         sizeMD={12}
-                        customClass='ProductCardSide'
+                        customClass='ProjectCardSide'
                         style={fadeInLeftResponsive}
                         />
                     </Grid>
@@ -83,6 +83,7 @@ const Home = () => {
                 sizeSM={6}
                 sizeMD={6}
                 order={{xs:1, sm:2}}
+                customClass='ProjectCardMain'
                 style={fadeDownResponsive}
                 />
         <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:3}}>
@@ -92,7 +93,7 @@ const Home = () => {
                 sizeXS={12}
                 sizeSM={12}
                 sizeMD={12}
-                customClass='ProductCardSide'
+                customClass='ProjectCardSide'
                 style={fadeInRightResponsive}
                 />
                 <ProjectCardCont 
@@ -100,7 +101,7 @@ const Home = () => {
                 sizeXS={12}
                 sizeSM={12}
                 sizeMD={12}
-                customClass='ProductCardSide'
+                customClass='ProjectCardSide'
                 style={fadeInRightResponsive}
                 />
             </Grid>
