@@ -19,7 +19,7 @@ body{
 .ProductCardIMG {
   object-fit: cover;
 }
-.ProductCardSide{
+.ProjectCardSide{
   width: 100%;
   height: 14.2rem;
 }
@@ -38,23 +38,27 @@ body{
 
 /* small laptop */
 @media only screen and (max-width: 1024px) {
-  .ProductCardSide{
-    height: 10.8rem;
+  .ProjectCardSide{
+    height: 11.85rem;
   }
 }
 
 /* tablet */
 @media only screen and (max-width: 768px) {
-  .ProductCardSide{
-    height: 7.5rem;
+  .ProjectCardSide{
+    height: 10rem;
   }
 }
 
 
 /* mobile */
 @media only screen and (max-width: 600px) {
-  .ProductCardSide{
-    max-width: 100%;
-    height: auto;
+  .ProductCardIMG{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .ProjectCardSide , .ProjectCardMain{
+    height: 16rem;
   }
 }
