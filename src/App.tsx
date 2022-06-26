@@ -13,6 +13,7 @@ import InteractiveAnimation from './pages/InteractiveAnimation'
 import WordPress from './pages/WordPress';
 import MTGAPI from './pages/mtgAPI';
 import ChromeExtension from './pages/ChromeExtentsion';
+import ResumePage from './pages/resume';
 
 
 declare module '@mui/material/styles' {
@@ -62,6 +63,7 @@ function App() {
       <NavBarCont/>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/resume' element={<ResumePage/>}/>
         <Route path='/pwa' element={<PWA/>}/>
         <Route path='/interactive-animation' element={<InteractiveAnimation/>}/>
         <Route path='/wordpress' element={<WordPress/>}/>

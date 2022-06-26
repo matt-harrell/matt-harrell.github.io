@@ -1,0 +1,38 @@
+[
+    {
+        "title":"Web Specialist",
+        "company":"Covetrus",
+        "time":"July 2021 - Present",
+        "location":"Remote | Dublin, Ohio",
+        "Resp":[
+            "Delivers timely Web enhancements that improve performance and conversion rates.",
+            "Responsible for the design and development of web pages, graphics, multimedia GUIs.",
+            "Convert designs into HTML/CSS templates.",
+            "Responsible for designing and maintaining sites using HTML/XHTML, CSS, JavaScript, and other programming tools to follow customer branding standards.",
+            "Assists in managing strategies and tactics to achieve Search Engine Optimization (SEO), and guides marketing department in industry best practices relating to SEO."
+        ]
+    },
+    {
+        "title":"Web Designer and Developer",
+        "company":"Freelance",
+        "time":"May 2021 - Jul 2021",
+        "location":"Remote",
+        "Resp":[
+            "Take designs and translate them into a functional website.",
+            "Redesigning website to be more user-centered.",
+            "Optimizing sites to be responsive.",
+            "Configuring hosting and forums."
+        ]
+    },
+    {
+        "title":"Web Developer",
+        "company":"Heartoscope · Internship",
+        "time":"Apr 2021 - May 2021",
+        "location":"Greenville, North Carolina, United States",
+        "Resp":[
+            "Collaborated with a Designer and Content Strategist to translate designs and strategy into a working site.",
+            "Tested Heartoscope.org responsiveness website and made changes to make site responsive.",
+            "Using Google Lighthouse, addressed several audits to make site accessible and mobile optimized while incorporating SEO strategies."
+        ]
+    }
+]
