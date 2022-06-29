@@ -5,14 +5,12 @@ import Education from './Education/Education';
 
 import Exp from './Exp/Exp';
 // import { ResumeDataProps } from './ResumeCont';
-import { ResumeDataType } from './ResumeCont';
+import { ResumeCompProps } from './ResumeCont';
 import Skills from './Skills/skills';
 
 
-
-
 // const ResumeComp = ({ExpData,ContactInfo}:ContactInfo) => {
-const ResumeComp = (props:ResumeDataType) => {
+const ResumeComp = (props:ResumeCompProps) => {
 
 
 

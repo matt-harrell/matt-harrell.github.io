@@ -28,15 +28,8 @@ interface ExpDataProps {
  
 interface SkillsProps {
     Skills:Skills;
-}
+} 
 
- interface ResumeDataType{
-    ContactInfo:ContactDataObj;
-    Skills:Skills;
-    Experience:ExpDataObj[];
-    Education:EducationObj[];
- }
- 
 interface EducationProps {
     EducationData:EducationObj[];
 }
@@ -48,13 +41,14 @@ interface EducationObj {
     year:string;
 }
 
-//  interface ResumeDataProps{
-//     ResumeData:ResumeDataType;
-//  }
+interface ResumeCompProps{
+    ContactInfo:ContactDataObj;
+    Skills:Skills;
+    Experience:ExpDataObj[];
+    Education:EducationObj[];
+ }
  
  
-
-
 const ResumeCont = () => {
 
     
@@ -72,4 +66,4 @@ const ResumeCont = () => {
 }
 export default ResumeCont;
 
-export type {ResumeDataType,ExpDataProps,ContactProps,SkillsProps,EducationProps };
+export type {ResumeCompProps,ExpDataProps,ContactProps,SkillsProps,EducationProps };
