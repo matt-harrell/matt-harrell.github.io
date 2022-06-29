@@ -1,50 +1,52 @@
-import ResumeData from '../../data/resume.json';
+import {Grid,Box,Typography, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
 
-import {Grid, Box,Typography, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Contact from './contact/contact';
+import Education from './Education/Education';
+
+import Exp from './Exp/Exp';
+// import { ResumeDataProps } from './ResumeCont';
+import { ResumeDataType } from './ResumeCont';
+import Skills from './Skills/skills';
 
 
 
 
-const ResumeComp = () => {
+// const ResumeComp = ({ExpData,ContactInfo}:ContactInfo) => {
+const ResumeComp = (props:ResumeDataType) => {
 
 
 
     return(
-        <>
-            {ResumeData.map((job,index) => 
-                <Box key={index}>
-                    <Typography component='h2' variant='h4'>
-                        {job.title}
-                    </Typography>
-                    <Box sx={{display:'flex',flexDirection:{xs:'column',sm:'row'}}}>
-                        <Typography component='h3' variant='h5'>
-                            {job.company}
-                        </Typography>
-                        <Typography component='h3' variant='h5' sx={{display:{xs:'none',sm:'block'},paddingX:{xs:0,sm:1}}}>
-                            |  
-                        </Typography>
-                        <Typography component='h3' variant='h5' 
-                            sx={{fontStyle:'italic'}}
-                        >
-                            {job.time}
-                        </Typography>
-                    </Box>
-                    <List>
-                        {job.Resp.map((resp,index) => 
-                        <ListItem key={index} sx={{paddingX:0}}>
-                            <ListItemIcon>
-                                <ArrowForwardIosIcon color='secondary'/>
-                            </ListItemIcon>
-                            <ListItemText>
-                            {resp}
-                            </ListItemText>
-                        </ListItem>
-                        )}
-                    </List>
-                </Box>
-            )}
-        </>
+        <Grid container>
+            <Grid item>
+                <Typography variant='h2' component='h2'>Matt Harrell</Typography>
+                <Typography variant='h4' component='h2' sx={{paddingBottom:2}}>Web Developer</Typography>
+            </Grid>
+            <Grid item>
+                <Typography component='h2' variant='h4'>
+                    Proficiencies
+                </Typography>
+                <Skills Skills={props.Skills}/>
+            </Grid>
+            <Grid item>
+                <Typography component='h2' variant='h4'>
+                    Contact
+                </Typography>
+                <Contact ContactInfo={props.ContactInfo}/>
+            </Grid>
+            <Grid item>
+                <Typography component='h2' variant='h4'>
+                    Experience
+                </Typography>
+                <Exp ExpData={props.Experience}/>
+            </Grid>
+            <Grid item>
+                <Typography component='h2' variant='h4'>
+                    Education
+                </Typography>
+                <Education EducationData={props.Education} />
+            </Grid>
+        </Grid>
     );
 }
 export default ResumeComp;
