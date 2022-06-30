@@ -1,5 +1,7 @@
 :root{
   --secondary:#2aa236;
+  --secondary-light:#3ad449;
+  --secondary-dark:#0d3d12;
 }
 
 body{
@@ -7,6 +9,23 @@ body{
   margin: 0;
   background-color: #e6e6e6;
 }
+
+a{
+  color: var(--secondary);
+}
+
+a:hover{
+  color: var(--secondary-light);
+}
+
+a:active{
+  color: var(--secondary-dark);
+}
+
+a:visited{
+  color: var(--secondary-dark);
+}
+
 .img{
   max-width: 100%;
   height: auto;
