@@ -23,7 +23,7 @@ const ResumePage = () =>{
                     color="secondary"
                     endIcon={<FileDownloadOutlinedIcon />}
                     disableElevation
-                    onClick={() => {window.open('/assets/docs/resume/Matt_Harrell_Resume.pdf')}}
+                    onClick={() => {window.open('/assets/docs/Matt_Harrell_Resume.pdf')}}
                 >
                     Download PDF Version
                 </Button>
