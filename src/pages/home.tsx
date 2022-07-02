@@ -4,6 +4,7 @@ import { useChain, useSpringRef, useSpring } from 'react-spring';
 import { useEffect } from 'react';
 
 import ProjectCardCont from '../components/PorjectCard/ProjectCardCont';
+import ContactFormCont from '../components/ContactForm/ContactFormCont';
 
 
 
@@ -107,6 +108,7 @@ const Home = () => {
             </Grid>
         </Grid>
         </Grid>
+        <ContactFormCont/>
     </Container>
     );
 }
