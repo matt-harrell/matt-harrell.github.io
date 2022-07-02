@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+
+import ContFormComp from './ContactFormComp';
 
 const ContactFormCont = () => {
   // const [form, setForm] = useState({
@@ -40,18 +42,21 @@ const ContactFormCont = () => {
       }, (error) => {
           console.log(error.text);
       });
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
-    <form onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" value={name} onChange={handleNameChange} />
-      <label>Email</label>
-      <input type="email" name="user_email" value={email} onChange={handleEmailChange} />
-      <label>Message</label>
-      <textarea name="message"  value={message} onChange={handleMessageChange}/>
-      <input type="submit" value="Send" />
-    </form>
+    <ContFormComp
+      name={name}
+      email={email}
+      message={message}
+      sendEmail={sendEmail}
+      handleNameChange={handleNameChange}
+      handleEmailChange={handleEmailChange}
+      handleMessageChange={handleMessageChange}
+    />
   );
 }
 
