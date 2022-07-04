@@ -64,11 +64,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/resume' element={<ResumePage/>}/>
-        <Route path='/pwa' element={<PWA/>}/>
-        <Route path='/interactive-animation' element={<InteractiveAnimation/>}/>
-        <Route path='/wordpress' element={<WordPress/>}/>
-        <Route path='/mtg-api' element={<MTGAPI/>}/>
-        <Route path='/chrome-extension' element={<ChromeExtension/>}/>
+        <Route path='/projects/pwa' element={<PWA/>}/>
+        <Route path='/projects/interactive-animation' element={<InteractiveAnimation/>}/>
+        <Route path='/projects/wordpress' element={<WordPress/>}/>
+        <Route path='/projects/mtg-api' element={<MTGAPI/>}/>
+        <Route path='/projects/chrome-extension' element={<ChromeExtension/>}/>
       </Routes>
     </Router>
     </ThemeProvider>

@@ -28,7 +28,7 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                 <Grid item xs={12} md={6} sx={{display:"flex"}}>
                     <img
                         className='img projectImg' 
-                        src={`assets/images/projects/${props.imagePath}/${props.image}`} 
+                        src={`/assets/images/projects/${props.imagePath}/${props.image}`} 
                         alt=""
                     />
                 </Grid>

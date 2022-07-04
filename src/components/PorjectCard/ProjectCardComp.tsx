@@ -54,7 +54,7 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
     useChain([showAninRef,hideDescRef],[0, 0.2])
 
     function handleClickHover() {
-        const url = props.pathURL || '/';
+        const url = '/projects/' + props.pathURL || '/';
 
         if (showDesc === false) {
             setShowDesc(true)
