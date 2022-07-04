@@ -13,14 +13,16 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import Projects from '../../data/projects.json';
+import { useRef } from 'react';
+
 
 
 
 const projectPages = Projects.map(project => project.title);
-const pages = ['Projects','Resume','Contact'];
+const pages = ['Resume'];
 // make projects go to home and have submenu
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -43,13 +45,20 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
 
+  const contactRef = useRef<HTMLElement>(document.getElementById('contactForm'));
+  const scrollToContact = () => {
+    handleCloseNavMenu();
+    contactRef.current.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+    console.log('scroll');
+    
+  }
+
   
 
   return (
     <AppBar position="sticky" sx={{marginBottom:2}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -107,10 +116,14 @@ const NavBar = () => {
                   </Typography>
                 </MenuItem>
               ))}
+              <MenuItem  onClick={scrollToContact}>
+                  <Typography textAlign="center">
+                    Contact  
+                  </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           {/* desktop menu */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -142,6 +155,12 @@ const NavBar = () => {
                 </NavLink>
               </Button>
             ))}
+            <Button
+                onClick={scrollToContact}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Contact
+              </Button>
           </Box>
 
           {/* <Box sx={{ flexGrow: 0 }}>

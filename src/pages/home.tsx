@@ -1,4 +1,4 @@
-import { Grid,Container } from '@mui/material';
+import { Grid,Container,Typography } from '@mui/material';
 import { useChain, useSpringRef, useSpring } from 'react-spring';
 
 import { useEffect } from 'react';
@@ -53,7 +53,10 @@ const Home = () => {
 
     return (
     <Container>
-        <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} >
+        <Typography component='h1' variant='h2' sx={{textAlign:'center',marginBottom:2,fontWeight:400}}>
+            Projects
+        </Typography>
+        <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} sx={{marginBottom:10}} >
         <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:1}}>
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <Grid item xs={12}>
@@ -108,6 +111,9 @@ const Home = () => {
             </Grid>
         </Grid>
         </Grid>
+        <Typography component='h2' variant='h2' sx={{textAlign:'center',marginBottom:2}}>
+            Contact Me
+        </Typography>
         <ContactFormCont/>
     </Container>
     );

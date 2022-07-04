@@ -1,4 +1,5 @@
 import { Grid,FormControl,TextField, Button, Container } from '@mui/material';
+import { useRef } from 'react';
 
 interface contactFormCompProps {
     name:string;
@@ -10,32 +11,40 @@ interface contactFormCompProps {
     handleMessageChange:(event:any) => void;   
 }
 
+
+
 const ContFormComp = (props:contactFormCompProps) => {
 
+
     return(
-    <Container>
+    <Container sx={{paddingBottom:5}} id='contactForm'>
         <FormControl fullWidth>
-            <TextField
-                type="text" 
-                name="user_name"
-                required 
-                value={props.name} 
-                onChange={props.handleNameChange}
-                label="Name"
-                placeholder='Jane Doe'
-            />
-            {/* <input type="text" name="user_name" value={props.name} onChange={props.handleNameChange} /> */}
-            <TextField
-                type="text" 
-                name="user_email"
-                required 
-                value={props.email} 
-                onChange={props.handleEmailChange}
-                label="Email"
-                placeholder='example@example.com'
-            />
-            {/* <input type="email" name="user_email" value={props.email} onChange={props.handleEmailChange} /> */}
-            {/* <label>Message</label> */}
+            <Grid container spacing={{xs:2}}>
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        type="text" 
+                        name="user_name"
+                        required 
+                        value={props.name} 
+                        onChange={props.handleNameChange}
+                        label="Name"
+                        placeholder='Jane Doe'
+                        sx={{width:'100%'}}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                <TextField
+                    type="text" 
+                    name="user_email"
+                    required 
+                    value={props.email} 
+                    onChange={props.handleEmailChange}
+                    label="Email"
+                    placeholder='example@example.com'
+                    sx={{width:'100%'}}
+                />
+                </Grid>
+            </Grid>
             <TextField
                 type="text" 
                 name="message"
@@ -47,12 +56,14 @@ const ContFormComp = (props:contactFormCompProps) => {
                 label="Message"
                 placeholder='Please leave a detailed message'
                 variant='filled'
+                sx={{marginY:5}}
             />
             <Button variant="contained" 
                 disableElevation
                 type='submit'
                 color='secondary'
                 onClick={props.sendEmail}
+                sx={{width:'fit-content',margin:'auto',paddingX:3,paddingY:1}}
             >
                 Submit
             </Button>
