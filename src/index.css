@@ -26,6 +26,15 @@ a:visited{
   color: var(--secondary-dark);
 }
 
+.nav-link{
+  text-decoration: none;
+  color: unset;
+}
+
+.nav-link:hover{
+  color: unset;
+}
+
 .img{
   max-width: 100%;
   height: auto;
