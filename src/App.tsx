@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter , Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material';
 
 
@@ -59,18 +58,20 @@ theme = createTheme(theme, {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <Router>
+    <BrowserRouter>
       <NavBarCont/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/resume' element={<ResumePage/>}/>
-        <Route path='/projects/pwa' element={<PWA/>}/>
-        <Route path='/projects/interactive-animation' element={<InteractiveAnimation/>}/>
-        <Route path='/projects/wordpress' element={<WordPress/>}/>
-        <Route path='/projects/mtg-api' element={<MTGAPI/>}/>
-        <Route path='/projects/chrome-extension' element={<ChromeExtension/>}/>
+        <Route path='resume' element={<ResumePage/>}/>
+        <Route path='projects'>
+          <Route path='pwa' element={<PWA/>}/>
+          <Route path='interactive-animation' element={<InteractiveAnimation/>}/>
+          <Route path='wordpress' element={<WordPress/>}/>
+          <Route path='mtg-api' element={<MTGAPI/>}/>
+          <Route path='chrome-extension' element={<ChromeExtension/>}/>
+        </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
     </ThemeProvider>
   );
 }

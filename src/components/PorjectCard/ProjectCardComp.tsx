@@ -59,7 +59,7 @@ const ProjectCardComp = (props:ProjectCardCompProps) =>{
         if (showDesc === false) {
             setShowDesc(true)
         } else{
-            navigate(url, { replace: true });
+            navigate(url, { replace: false });
         }
            
        }
