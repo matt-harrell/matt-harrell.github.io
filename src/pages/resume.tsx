@@ -1,8 +1,8 @@
 import { Typography, Button, Container,Box } from "@mui/material";
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 
-
 import ResumeCont from "../components/Resume/ResumeCont"
+import ContactFormCont from "../components/ContactForm/ContactFormCont";
 
 const ResumePage = () =>{
     return(
@@ -29,6 +29,7 @@ const ResumePage = () =>{
                 </Button>
             </Box>
             <ResumeCont/>
+            <ContactFormCont/>
         </Container>
     );
     
