@@ -1,5 +1,4 @@
-import { Grid,FormControl,TextField, Button, Container } from '@mui/material';
-import { useRef } from 'react';
+import { Grid,FormControl,TextField, Button, Container, Typography } from '@mui/material';
 
 interface contactFormCompProps {
     name:string;
@@ -8,16 +7,18 @@ interface contactFormCompProps {
     sendEmail:(event:{ preventDefault: () => void; }) => void;
     handleNameChange:(event:any) => void;
     handleEmailChange:(event:any) => void;
-    handleMessageChange:(event:any) => void;   
+    handleMessageChange:(event:any) => void; 
 }
 
 
 
 const ContFormComp = (props:contactFormCompProps) => {
 
-
     return(
     <Container sx={{paddingBottom:5}} id='contactForm'>
+        <Typography component='h2' variant='h3' sx={{textAlign:'center',marginBottom:2}}>
+            Contact Me
+        </Typography>
         <FormControl fullWidth>
             <Grid container spacing={{xs:2}}>
                 <Grid item xs={12} sm={6}>

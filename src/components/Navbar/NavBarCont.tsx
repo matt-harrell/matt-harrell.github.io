@@ -7,21 +7,17 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
-import Projects from '../../data/projects.json';
-import { useRef } from 'react';
+import { Link } from "react-scroll";
 
 
 
 
-const projectPages = Projects.map(project => project.title);
+
 const pages = ['Resume'];
 // make projects go to home and have submenu
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -44,14 +40,6 @@ const NavBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const contactRef = useRef<HTMLElement>(document.getElementById('contactForm'));
-  const scrollToContact = () => {
-    handleCloseNavMenu();
-    contactRef.current.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-    console.log('scroll');
-    
-  }
 
   
 
@@ -116,9 +104,11 @@ const NavBar = () => {
                   </Typography>
                 </MenuItem>
               ))}
-              <MenuItem  onClick={scrollToContact}>
+              <MenuItem  onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    Contact  
+                    <Link to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
+                      Contact
+                   </Link> 
                   </Typography>
               </MenuItem>
             </Menu>
@@ -156,10 +146,12 @@ const NavBar = () => {
               </Button>
             ))}
             <Button
-                onClick={scrollToContact}
+                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                Contact
+                <Link to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
+                  Contact
+                </Link>
               </Button>
           </Box>
 

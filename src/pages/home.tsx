@@ -111,9 +111,6 @@ const Home = () => {
             </Grid>
         </Grid>
         </Grid>
-        <Typography component='h2' variant='h2' sx={{textAlign:'center',marginBottom:2}}>
-            Contact Me
-        </Typography>
         <ContactFormCont/>
     </Container>
     );
