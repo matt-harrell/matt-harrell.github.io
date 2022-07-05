@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink, scroller } from "react-scroll";
 
 
 
@@ -56,7 +56,7 @@ const NavBar = () => {
     
     if(urlRegex.test(url)){
       setContactLink(
-        <NavLink to="/" style={{textDecoration:'none',color:'unset'}}>
+        <NavLink to={{pathname:'/',hash:'#contactForm'}} style={{textDecoration:'none',color:'unset'}}>
           Contact
         </NavLink>
       )
@@ -66,6 +66,21 @@ const NavBar = () => {
           Contact
         </ScrollLink>
       )
+    }
+
+  },[location])
+
+  useEffect(() =>{
+    const urlRegex = new RegExp('#contactForm');
+    const url = String(window.location.href);
+    
+    if(urlRegex.test(url)){
+      scroller.scrollTo('scrollToContact', {
+        duration: 500,
+        delay: 100,
+        smooth: true,
+        offset: 50,
+      })
     }
 
   },[location])
