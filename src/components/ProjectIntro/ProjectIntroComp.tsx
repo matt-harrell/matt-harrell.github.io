@@ -11,7 +11,7 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
     // let skillsSecondHalf = skills?.slice(skillsHalf, skills?.length);
 
     return(
-        <Container>
+        <Container sx={{paddingBottom:15}}>
             <Typography 
                 variant='h2' 
                 component='h1' 

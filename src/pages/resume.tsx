@@ -17,7 +17,7 @@ const ResumePage = () =>{
                 >
                 Resume
             </Typography>
-            <Box sx={{textAlign:'center'}}>
+            <Box sx={{textAlign:'center',marginBottom:5}}>
                 <Button 
                     variant="contained"
                     color="secondary"

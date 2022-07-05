@@ -16,7 +16,7 @@ const ContFormComp = (props:contactFormCompProps) => {
 
     return(
     <Element name='scrollToContact'>
-        <Container sx={{paddingBottom:5}} id='contactForm'>
+        <Container id='contactForm' sx={{paddingBottom:15}}>
             <Typography component='h2' variant='h3' sx={{textAlign:'center',marginBottom:2}}>
                 Contact Me
             </Typography>
