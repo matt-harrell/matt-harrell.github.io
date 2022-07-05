@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect,useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,9 +11,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-import { NavLink} from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 
 
@@ -40,6 +41,34 @@ const NavBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const [contactLink, setContactLink] = useState(
+    <ScrollLink to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
+      Contact
+    </ScrollLink>
+  )
+
+  const location = useLocation();
+
+  useEffect(() =>{
+    const urlRegex = new RegExp('projects');
+    const url = String(window.location.href);
+    
+    if(urlRegex.test(url)){
+      setContactLink(
+        <NavLink to="/" style={{textDecoration:'none',color:'unset'}}>
+          Contact
+        </NavLink>
+      )
+    } else {
+      setContactLink(
+        <ScrollLink to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
+          Contact
+        </ScrollLink>
+      )
+    }
+
+  },[location])
 
   
 
@@ -106,9 +135,7 @@ const NavBar = () => {
               ))}
               <MenuItem  onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
-                      Contact
-                   </Link> 
+                    {contactLink}
                   </Typography>
               </MenuItem>
             </Menu>
@@ -149,9 +176,7 @@ const NavBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
-                  Contact
-                </Link>
+                {contactLink}
               </Button>
           </Box>
 
