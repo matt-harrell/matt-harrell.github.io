@@ -5,11 +5,7 @@ import emailjs from '@emailjs/browser';
 import ContFormComp from './ContactFormComp';
 
 const ContactFormCont = () => {
-  // const [form, setForm] = useState({
-  //   name:'',
-  //   email:'',
-  //   message:'',
-  // });
+  
   const [name,setName] = useState('');
 
   const handleNameChange = (event:any) => {
@@ -33,7 +29,8 @@ const ContactFormCont = () => {
     user_email:email,
     message:message,
   }
-
+  const [hideForm,setHideForm] = useState('');
+  const [showThanks, setShowThanks] = useState('none')
   const sendEmail = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
 
@@ -43,9 +40,8 @@ const ContactFormCont = () => {
       }, (error) => {
           console.log(error.text);
       });
-    setName('');
-    setEmail('');
-    setMessage('');
+    setHideForm('none');
+    setShowThanks('block');
   };
 
   
@@ -59,6 +55,8 @@ const ContactFormCont = () => {
       handleNameChange={handleNameChange}
       handleEmailChange={handleEmailChange}
       handleMessageChange={handleMessageChange}
+      hideForm={hideForm}
+      showThanks={showThanks}
     />
   );
 }
