@@ -35,7 +35,7 @@ export function ProjectMenu() {
         Projects
       </Button>
       <Menu
-        id="basic-menu"
+        id="project-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
