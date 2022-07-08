@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { Link as ScrollLink, scroller } from "react-scroll";
+import ProjectMenu from './ProjectsMenu';
 
 
 
@@ -109,7 +110,6 @@ const NavBar = () => {
               Matt Harrll
             </NavLink>
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -139,6 +139,7 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <ProjectMenu/>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
@@ -155,6 +156,8 @@ const NavBar = () => {
               </MenuItem>
             </Menu>
           </Box>
+
+
           {/* desktop menu */}
           <Typography
             variant="h5"
@@ -176,6 +179,7 @@ const NavBar = () => {
             </NavLink>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <ProjectMenu/>
             {pages.map((page) => (
               <Button
                 key={page}
