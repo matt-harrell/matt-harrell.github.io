@@ -121,6 +121,34 @@
             "CSS",
             "JavaScript"
         ]
+    },
+    {
+        "title": {
+            "thumbnail":"DND Encounter Creator",
+            "page":"DND Encounter Creator"
+        },
+        "introSentence":"A React app for Dungeons & Dragons.",
+        "description":"The purpose of this app is to help Dungeon Master's create combat encounters for the board game Dungeons and Dragons without having to perform manual calculations on making the encounter balanced.",
+        "images":{
+            "thumbnail":"DNDappIcon.png",
+            "main":"EcounterCreatorPhone.png"
+        },
+        "projectLinks":[
+            {
+            "link":"https://github.com/matt-harrell/dnd-encounter-creator",
+            "text":"GitHub"
+            },
+            {
+            "link":"https://dnd-encounter-creator.netlify.app/",
+            "text":"DND Encounter Creator"
+            }
+        ],
+        "skills":[
+            "React",
+            "Redux",
+            "Material UI",
+            "API"
+        ]
     }
 ]
 
