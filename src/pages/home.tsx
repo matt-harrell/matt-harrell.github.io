@@ -57,7 +57,7 @@ const Home = () => {
             Projects
         </Typography>
         <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} sx={{marginBottom:10}} >
-        <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:1}}>
+        <Grid item xs={12} sm={12} md={3} order={{xs:2}}>
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <Grid item xs={12}>
                         <ProjectCardCont 
@@ -82,15 +82,15 @@ const Home = () => {
                 </Grid>
         </Grid>
                 <ProjectCardCont 
-                nameOfProject='PWA'
+                nameOfProject='DND Encounter Creator'
                 sizeXS={12}
-                sizeSM={6}
+                sizeSM={12}
                 sizeMD={6}
-                order={{xs:1, sm:2}}
+                order={{xs:1,md:2}}
                 customClass='ProjectCardMain'
                 style={fadeDownResponsive}
                 />
-        <Grid item xs={12} sm={3} md={3} order={{xs:2, sm:3}}>
+        <Grid item xs={12} sm={12} md={3} order={{xs:2, sm:3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >
                 <ProjectCardCont 
                 nameOfProject='WordPress'
