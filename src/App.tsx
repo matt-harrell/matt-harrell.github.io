@@ -10,9 +10,9 @@ import Home from './pages/home';
 import PWA from './pages/pwa';
 import InteractiveAnimation from './pages/InteractiveAnimation'
 import WordPress from './pages/WordPress';
-import MTGAPI from './pages/mtgAPI';
 import ChromeExtension from './pages/ChromeExtentsion';
 import ResumePage from './pages/resume';
+import DNDEncounterCreator from "./pages/DNDEncounterCreator";
 
 
 declare module '@mui/material/styles' {
@@ -67,7 +67,7 @@ function App() {
           <Route path='pwa' element={<PWA/>}/>
           <Route path='interactive-animation' element={<InteractiveAnimation/>}/>
           <Route path='wordpress' element={<WordPress/>}/>
-          <Route path='mtg-api' element={<MTGAPI/>}/>
+          <Route path='dnd-encounter-creator' element={<DNDEncounterCreator/>}/>
           <Route path='chrome-extension' element={<ChromeExtension/>}/>
         </Route>
       </Routes>
