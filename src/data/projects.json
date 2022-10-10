@@ -61,6 +61,30 @@
     },
     {
         "title": {
+            "thumbnail":"WordPress",
+            "page":"WordPress"
+        },
+        "introSentence":"A WordPress website for a non-profit.",
+        "description":"This is a website I created for a nonprofit called Heartoscope, a nonprofit in Greenville, NC, using the Divi, a custom WordPress theme builder. When I was creating this website, I collaborated with a designer and content strategist to translate their designs and strategy into a working website. I also used Google Lighthouse to address several audits to make the website accessible and mobile optimized while incorporating SEO strategies. In order to help the client with managing their website, I also created several YouTube videos to help train the client on how to use Divi.",
+        "images":{
+            "thumbnail":"heartoscope.org.jpg"
+        },
+        "projectLinks":[
+            {
+            "link":"https://heartoscope.org/",
+            "text":"Go to Heartoscope.org"
+            }
+        ],
+        "skills":[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "WordPress",
+            "Divi"
+        ]
+    },
+    {
+        "title": {
             "thumbnail":"Interactive Animation",
             "page":"Interactive Animation"
         },
@@ -101,52 +125,6 @@
         ],
         "skills":[
             "HTML",
-            "JavaScript"
-        ]
-    },
-    {
-        "title": {
-            "thumbnail":"WordPress",
-            "page":"WordPress"
-        },
-        "introSentence":"A WordPress website for a non-profit.",
-        "description":"This is a website I created for a nonprofit called Heartoscope, a nonprofit in Greenville, NC, using the Divi, a custom WordPress theme builder. When I was creating this website, I collaborated with a designer and content strategist to translate their designs and strategy into a working website. I also used Google Lighthouse to address several audits to make the website accessible and mobile optimized while incorporating SEO strategies. In order to help the client with managing their website, I also created several YouTube videos to help train the client on how to use Divi.",
-        "images":{
-            "thumbnail":"heartoscope.org.jpg"
-        },
-        "projectLinks":[
-            {
-            "link":"https://heartoscope.org/",
-            "text":"Go to Heartoscope.org"
-            }
-        ],
-        "skills":[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "WordPress",
-            "Divi"
-        ]
-    },
-    {
-        "title": {
-            "thumbnail":"MTG API",
-            "page":"MTG API"
-        },
-        "introSentence":"A project using MTG’s API.",
-        "description":" I used Magic the Gathering’s API, an API based on a table to card game, to create a program that would query the API based on a user's search input. The  API would return an image of the card, name of the card art artist, name of set and rarity of the card.",
-        "images":{
-            "thumbnail":"api.jpg"
-        },
-        "projectLinks":[
-            {
-            "link":"https://codepen.io/mharrell8/pen/RwGPpvG",
-            "text":"View on CodePen"
-            }
-        ],
-        "skills":[
-            "HTML",
-            "CSS",
             "JavaScript"
         ]
     }
