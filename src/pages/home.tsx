@@ -61,7 +61,7 @@ const Home = () => {
                 <Grid container spacing={{ xs: 2, md: 3 }} >
                     <Grid item xs={12}>
                         <ProjectCardCont 
-                        nameOfProject='WordPress'
+                        nameOfProject='PWA'
                         sizeXS={12}
                         sizeSM={12}
                         sizeMD={12}
@@ -93,7 +93,7 @@ const Home = () => {
         <Grid item xs={12} sm={12} md={3} order={{xs:2, sm:3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >
                 <ProjectCardCont 
-                nameOfProject='PWA'
+                nameOfProject='WordPress'
                 sizeXS={12}
                 sizeSM={12}
                 sizeMD={12}
