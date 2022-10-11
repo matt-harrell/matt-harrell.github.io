@@ -2,6 +2,7 @@
   --secondary:#2aa236;
   --secondary-light:#3ad449;
   --secondary-dark:#0d3d12;
+  --Project-Card-Main-Hieght:30rem;
 }
 
 body{
@@ -46,11 +47,19 @@ a:visited{
 
 .ProductCardIMG {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
+
+.ProjectCardMain{
+  height: var(--Project-Card-Main-Hieght);
+}
+
 .ProjectCardSide{
   width: 100%;
-  height: 14.2rem;
+  height: calc(var(--Project-Card-Main-Hieght) / 2 - 30px);
 }
+
 
 /* ProjectIntro Styles */
 
@@ -63,24 +72,8 @@ a:visited{
 }
 
 
-
-/* small laptop */
-@media only screen and (max-width: 1024px) {
-  .ProjectCardSide{
-    height: 11.85rem;
-  }
-}
-
-/* tablet */
-@media only screen and (max-width: 768px) {
-  .ProjectCardSide{
-    height: 10rem;
-  }
-}
-
-
 /* mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 899px) {
   .ProductCardIMG{
     object-fit: cover;
     width: 100%;

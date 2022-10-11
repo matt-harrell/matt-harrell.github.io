@@ -6,6 +6,7 @@ import ProjectCardComp from './ProjectCardComp';
 interface Order{
     xs?:number;
     sm?:number;
+    md?:number;
 }
 
 interface ProjectCardContProps {
