@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, ScrollRestoration, useLocation } from 'react-router-dom';
 
 import { Link as ScrollLink, scroller } from "react-scroll";
 import ProjectMenu from './ProjectsMenu';
