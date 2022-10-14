@@ -13,6 +13,8 @@ import WordPress from './pages/WordPress';
 import ChromeExtension from './pages/ChromeExtentsion';
 import ResumePage from './pages/resume';
 import DNDEncounterCreator from "./pages/DNDEncounterCreator";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 
 declare module '@mui/material/styles' {
@@ -23,9 +25,6 @@ declare module '@mui/material/styles' {
     bgGrey: PaletteOptions['primary'];
   }
 }
-
-
-
 
 
 
@@ -58,20 +57,21 @@ theme = createTheme(theme, {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <NavBarCont/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='resume' element={<ResumePage/>}/>
-        <Route path='projects'>
-          <Route path='pwa' element={<PWA/>}/>
-          <Route path='interactive-animation' element={<InteractiveAnimation/>}/>
-          <Route path='wordpress' element={<WordPress/>}/>
-          <Route path='dnd-encounter-creator' element={<DNDEncounterCreator/>}/>
-          <Route path='chrome-extension' element={<ChromeExtension/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <ScrollToTop/>
+        <NavBarCont />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='resume' element={<ResumePage />} />
+          <Route path='projects'>
+            <Route path='pwa' element={<PWA />} />
+            <Route path='interactive-animation' element={<InteractiveAnimation />} />
+            <Route path='wordpress' element={<WordPress />} />
+            <Route path='dnd-encounter-creator' element={<DNDEncounterCreator />} />
+            <Route path='chrome-extension' element={<ChromeExtension />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
