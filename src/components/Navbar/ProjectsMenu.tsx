@@ -2,23 +2,30 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Box } from '@mui/material';
+
 
 
 import { NavLink } from 'react-router-dom';
 
 import Projects from '../../data/projects.json';
 
+interface ProjectMenuProps {
+  anchorEl:null | HTMLElement;
+  open:boolean;
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClose:() => void;
+}
 
-export function ProjectMenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
+const ProjectMenu = ({anchorEl,open,handleClick,handleClose}:ProjectMenuProps) => {
+  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   
 

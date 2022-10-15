@@ -35,6 +35,20 @@ const NavBar = () => {
     setAnchorElNav(null);
   };
 
+  // project menu 
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+    // add condtional to check screen width then run if tablet size or below, run change state
+    setAnchorElNav(null);
+  };
+  // end of project menu
+
+
   const [contactLink, setContactLink] = useState(
     <ScrollLink to="contactForm" smooth={true} duration={300} offset={-55} className="nav-link">
       Contact
@@ -131,7 +145,12 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <ProjectMenu/>
+              <ProjectMenu
+                anchorEl={anchorEl}
+                open={open}
+                handleClick={handleClick}
+                handleClose={handleClose}
+              />
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
@@ -171,7 +190,12 @@ const NavBar = () => {
             </NavLink>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <ProjectMenu/>
+          <ProjectMenu
+                anchorEl={anchorEl}
+                open={open}
+                handleClick={handleClick}
+                handleClose={handleClose}
+              />
             {pages.map((page) => (
               <Button
                 key={page}
