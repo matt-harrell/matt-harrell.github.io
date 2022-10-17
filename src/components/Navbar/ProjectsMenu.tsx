@@ -10,22 +10,14 @@ import { NavLink } from 'react-router-dom';
 import Projects from '../../data/projects.json';
 
 interface ProjectMenuProps {
-  anchorEl:null | HTMLElement;
+  anchorElProject:null | HTMLElement;
   open:boolean;
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  handleClose:() => void;
+  handleProjectMenuClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleProjectMenuClose:() => void;
 }
 
 
-const ProjectMenu = ({anchorEl,open,handleClick,handleClose}:ProjectMenuProps) => {
-  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  // const open = Boolean(anchorEl);
-  // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
+const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectMenuClose}:ProjectMenuProps) => {
 
   
 
@@ -36,16 +28,16 @@ const ProjectMenu = ({anchorEl,open,handleClick,handleClose}:ProjectMenuProps) =
         aria-controls={open ? 'project-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
+        onClick={handleProjectMenuClick}
         sx={{color:'unset',padding:0,textTransform:{xs:'none',md:'Uppercase'},fontSize:{xs:'1rem',md:'0.875rem'},fontWeight:{xs:'400',md:'500'}}}
       >
         Projects
       </Button>
       <Menu
         id="project-menu"
-        anchorEl={anchorEl}
+        anchorEl={anchorElProject}
         open={open}
-        onClose={handleClose}
+        onClose={handleProjectMenuClose}
         MenuListProps={{
           'aria-labelledby': 'project-menu',
         }}
@@ -56,7 +48,7 @@ const ProjectMenu = ({anchorEl,open,handleClick,handleClose}:ProjectMenuProps) =
             let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
             return (
-            <MenuItem onClick={handleClose} key={index}>
+            <MenuItem onClick={handleProjectMenuClose} key={index}>
                 <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}}>
                     {project.title.page}
                 </NavLink>

@@ -11,21 +11,22 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
-import { NavLink, ScrollRestoration, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { Link as ScrollLink, scroller } from "react-scroll";
 import ProjectMenu from './ProjectsMenu';
-
-
+import { useMediaQuery, useTheme } from '@mui/material';
 
 
 
 const pages = ['Resume'];
-// make projects go to home and have submenu
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElProject, setanchorElProject] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorElProject);
+  const theme = useTheme();
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -36,15 +37,14 @@ const NavBar = () => {
   };
 
   // project menu 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleProjectMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setanchorElProject(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-    // add condtional to check screen width then run if tablet size or below, run change state
-    setAnchorElNav(null);
+  const handleProjectMenuClose = () => {
+    setanchorElProject(null);
+    if(matchesSM){
+      setAnchorElNav(null);
+    }
   };
   // end of project menu
 
@@ -146,10 +146,10 @@ const NavBar = () => {
               }}
             >
               <ProjectMenu
-                anchorEl={anchorEl}
+                anchorElProject={anchorElProject}
                 open={open}
-                handleClick={handleClick}
-                handleClose={handleClose}
+                handleProjectMenuClick={handleProjectMenuClick}
+                handleProjectMenuClose={handleProjectMenuClose}
               />
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -191,11 +191,11 @@ const NavBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <ProjectMenu
-                anchorEl={anchorEl}
+                anchorElProject={anchorElProject}
                 open={open}
-                handleClick={handleClick}
-                handleClose={handleClose}
-              />
+                handleProjectMenuClick={handleProjectMenuClick}
+                handleProjectMenuClose={handleProjectMenuClose}
+          />
             {pages.map((page) => (
               <Button
                 key={page}
