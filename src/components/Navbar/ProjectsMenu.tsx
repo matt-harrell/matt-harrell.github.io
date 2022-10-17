@@ -22,14 +22,14 @@ const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectM
   
 
   return (
-    <MenuItem sx={{paddingY:{xs:1,md:1},paddingX:{xs:2,md:1}}}>
+    <MenuItem sx={{paddingY:{xs:1,md:0},paddingX:{xs:2,md:0},height:'fit-content',alignSelf:'center'}}>
       <Button
         id="project-button"
         aria-controls={open ? 'project-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleProjectMenuClick}
-        sx={{color:'unset',padding:0,textTransform:{xs:'none',md:'Uppercase'},fontSize:{xs:'1rem',md:'0.875rem'},fontWeight:{xs:'400',md:'500'}}}
+        sx={{color:'unset',padding:{xs:0},textTransform:{xs:'none',md:'Uppercase'},fontSize:{xs:'1rem',md:'0.875rem'},fontWeight:{xs:'400',md:'500'}}}
       >
         Projects
       </Button>
@@ -48,11 +48,11 @@ const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectM
             let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
             return (
-            <MenuItem onClick={handleProjectMenuClose} key={index}>
-                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}}>
+            <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} key={index}>
+              <MenuItem onClick={handleProjectMenuClose} >
                     {project.title.page}
-                </NavLink>
-            </MenuItem>
+              </MenuItem>
+            </NavLink>
             );
             
         })}
