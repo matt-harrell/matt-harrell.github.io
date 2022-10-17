@@ -22,7 +22,7 @@ const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectM
   
 
   return (
-    <MenuItem sx={{paddingY:{xs:1,md:0},paddingX:{xs:2,md:0},height:'fit-content',alignSelf:'center'}}>
+    <MenuItem sx={{paddingY:{xs:1,md:0},paddingX:{xs:2,md:1},height:'fit-content',alignSelf:'center'}}>
       <Button
         id="project-button"
         aria-controls={open ? 'project-menu' : undefined}
@@ -48,11 +48,11 @@ const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectM
             let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
             return (
-            <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} key={index}>
               <MenuItem onClick={handleProjectMenuClose} >
+                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} key={index}>
                     {project.title.page}
+                </NavLink>
               </MenuItem>
-            </NavLink>
             );
             
         })}
