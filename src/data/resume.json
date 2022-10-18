@@ -7,20 +7,14 @@
         "phone":9108332451
     },
     "Skills":[
-        "HTML",
+        "React",
         "CSS",
+        "Redux",
+        "Material UI",
         "TypeScript",
-        "JavaScript",
-        "Git",
+        "HTML & CSS",
         "Bootstrap",
-        "SASS",
-        "jQuery",
-        "GreenSock",
-        "Responsive Design",
-        "Accessible Design", 
-        "Adobe XD", 
-        "Illustrator",
-        "Photoshop"
+        "Git"
     ],
     "Experience":[
         {
@@ -29,11 +23,10 @@
             "time":"July 2021 - Present",
             "location":"Remote | Dublin, Ohio",
             "Resp":[
-                "Delivers timely Web enhancements that improve performance and conversion rates.",
-                "Responsible for the design and development of web pages, graphics, multimedia GUIs.",
-                "Convert designs into HTML/CSS templates.",
-                "Responsible for designing and maintaining sites using HTML/XHTML, CSS, JavaScript, and other programming tools to follow customer branding standards.",
-                "Assists in managing strategies and tactics to achieve Search Engine Optimization (SEO), and guides marketing department in industry best practices relating to SEO."
+                "Developed web pages using HTML, CSS, JavaScript.",
+                "Used various Content Management Systems (CMS) such as WordPress, Pardot, Sitefinity and SAP SmartEdit along with custom code to create and update web pages.",
+                "Debugged websites using Google Chrome Dev Tools.",
+                "Rapidly learned new software to fulfill business needs."
             ]
         },
         {
@@ -42,10 +35,9 @@
             "time":"May 2021 - Jul 2021",
             "location":"Remote",
             "Resp":[
-                "Take designs and translate them into a functional website.",
-                "Redesigning website to be more user-centered.",
-                "Optimizing sites to be responsive.",
-                "Configuring hosting and forums."
+                "Designed and developed websites using Wordpress along with custom code.",
+                "Optimized sites to be mobile friendly and have a quick load time.",
+                "Configured hosting and forums."
             ]
         },
         {
