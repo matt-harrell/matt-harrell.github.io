@@ -2,43 +2,42 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Box } from '@mui/material';
+
 
 
 import { NavLink } from 'react-router-dom';
 
 import Projects from '../../data/projects.json';
 
+interface ProjectMenuProps {
+  anchorElProject:null | HTMLElement;
+  open:boolean;
+  handleProjectMenuClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleProjectMenuClose:() => void;
+}
 
-export function ProjectMenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
+const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectMenuClose}:ProjectMenuProps) => {
 
   
 
   return (
-    <MenuItem sx={{paddingY:{xs:1,md:1},paddingX:{xs:2,md:1}}}>
+    <MenuItem sx={{paddingY:{xs:1,md:0},paddingX:{xs:2,md:1},height:'fit-content',alignSelf:'center'}}>
       <Button
         id="project-button"
         aria-controls={open ? 'project-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        sx={{color:'unset',padding:0,textTransform:{xs:'none',md:'Uppercase'},fontSize:{xs:'1rem',md:'0.875rem'},fontWeight:{xs:'400',md:'500'}}}
+        onClick={handleProjectMenuClick}
+        sx={{color:'unset',padding:{xs:0},textTransform:{xs:'none',md:'Uppercase'},fontSize:{xs:'1rem',md:'0.875rem'},fontWeight:{xs:'400',md:'500'}}}
       >
         Projects
       </Button>
       <Menu
         id="project-menu"
-        anchorEl={anchorEl}
+        anchorEl={anchorElProject}
         open={open}
-        onClose={handleClose}
+        onClose={handleProjectMenuClose}
         MenuListProps={{
           'aria-labelledby': 'project-menu',
         }}
@@ -49,11 +48,11 @@ export function ProjectMenu() {
             let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
             return (
-            <MenuItem onClick={handleClose} key={index}>
-                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}}>
+              <MenuItem onClick={handleProjectMenuClose} >
+                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} key={index}>
                     {project.title.page}
                 </NavLink>
-            </MenuItem>
+              </MenuItem>
             );
             
         })}
