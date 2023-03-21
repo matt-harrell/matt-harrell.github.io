@@ -26,11 +26,24 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
             <Grid container spacing={{ xs: 2, md: 3 }}>
                 
                 <Grid item xs={12} md={6} sx={{display:"flex"}}>
-                    <img
-                        className='img projectImg' 
-                        src={`/assets/images/projects/${props.imagePath}/${props.image}`} 
-                        alt=""
-                    />
+                    {props.video === undefined ?
+                        <img
+                            className='img projectImg' 
+                            src={`/assets/images/projects/${props.imagePath}/${props.image}`} 
+                            alt=""
+                        />
+                        :
+                        <div style={{position: "relative", paddingBottom: "56.25%", height:"0"}}>
+                            <iframe 
+                                src={props.video}  
+                                allowFullScreen
+                                title='Demo video' 
+                                style={{position:"absolute",top:0,left:0, width:"100%",height: "100%",}}
+                                >
+                            </iframe>
+                        </div>
+                    }
+                    
                 </Grid>
 
                 <Grid item xs={12} md={6}>
