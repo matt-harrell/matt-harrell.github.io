@@ -10,10 +10,10 @@ import Home from './pages/home';
 import PWA from './pages/pwa';
 import InteractiveAnimation from './pages/InteractiveAnimation'
 import WordPress from './pages/WordPress';
-import ChromeExtension from './pages/ChromeExtentsion';
 import ResumePage from './pages/resume';
 import DNDEncounterCreator from "./pages/DNDEncounterCreator";
 import ScrollToTop from "./components/ScrollToTop";
+import SongProfiler from "./pages/SongProfiler";
 
 
 
@@ -68,7 +68,7 @@ function App() {
             <Route path='interactive-animation' element={<InteractiveAnimation />} />
             <Route path='wordpress' element={<WordPress />} />
             <Route path='dnd-encounter-creator' element={<DNDEncounterCreator />} />
-            <Route path='chrome-extension' element={<ChromeExtension />} />
+            <Route path='song-profiler' element={<SongProfiler />} />
           </Route>
         </Routes>
       </BrowserRouter>

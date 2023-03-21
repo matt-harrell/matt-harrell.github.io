@@ -71,7 +71,7 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <ProjectCardCont 
-                        nameOfProject='Chrome Extension'
+                        nameOfProject='DND Encounter Creator'
                         sizeXS={12}
                         sizeSM={12}
                         sizeMD={12}
@@ -82,13 +82,13 @@ const Home = () => {
                 </Grid>
         </Grid>
         <ProjectCardCont 
-        nameOfProject='DND Encounter Creator'
-        sizeXS={12}
-        sizeSM={12}
-        sizeMD={6}
-        order={{xs:1,md:2}}
-        customClass='ProjectCardMain'
-        style={fadeDownResponsive}
+            nameOfProject='Song Profiler'
+            sizeXS={12}
+            sizeSM={12}
+            sizeMD={6}
+            order={{xs:1,md:2}}
+            customClass='ProjectCardMain'
+            style={fadeDownResponsive}
         />
         <Grid item xs={12} sm={12} md={3} order={{xs:2, sm:3}}>
             <Grid container spacing={{ xs: 2, md: 3 }} >

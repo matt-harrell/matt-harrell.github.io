@@ -1,12 +1,12 @@
 import ProjoctIntroCont from "../components/ProjectIntro/ProjectIntroCont";
 
-const ChromeExtension = () => {
+const SongProfiler = () => {
 
     return (
       <ProjoctIntroCont
-        nameOfProject="Chrome Extension"
+        nameOfProject="Song Profiler"
       />
     );
 }
 
-export default ChromeExtension;
+export default SongProfiler;

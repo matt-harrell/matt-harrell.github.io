@@ -48,8 +48,8 @@ const ProjectMenu = ({anchorElProject,open,handleProjectMenuClick,handleProjectM
             let pathURL = path?.replaceAll(' ', '-').toLowerCase();
 
             return (
-              <MenuItem onClick={handleProjectMenuClose} >
-                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} key={index}>
+              <MenuItem onClick={handleProjectMenuClose} key={index}>
+                <NavLink to={`/projects/${pathURL || '/'}`} style={{textDecoration:'none',color:'unset'}} >
                     {project.title.page}
                 </NavLink>
               </MenuItem>
