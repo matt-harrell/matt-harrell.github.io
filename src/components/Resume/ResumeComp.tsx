@@ -1,4 +1,5 @@
 import {Grid,Box,Typography, List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import Certifications from './Certifications';
 
 import Contact from './contact/contact';
 import Education from './Education/Education';
@@ -37,6 +38,12 @@ const ResumeComp = (props:ResumeCompProps) => {
                     Experience
                 </Typography>
                 <Exp ExpData={props.Experience}/>
+            </Grid>
+            <Grid item xs={12}>
+                <Typography component='h2' variant='h4'>
+                    Certifications
+                </Typography>
+                <Certifications CertificationsData={props.Certifications} />
             </Grid>
             <Grid item xs={12}>
                 <Typography component='h2' variant='h4'>

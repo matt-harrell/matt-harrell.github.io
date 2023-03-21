@@ -41,11 +41,23 @@ interface EducationObj {
     year:string;
 }
 
+interface CertificationsProps {
+    CertificationsData:Certification[],
+}
+
+interface Certification {
+    title:string,
+    link:string,
+    provider:string,
+    year:string,
+}
+
 interface ResumeCompProps{
     ContactInfo:ContactDataObj;
     Skills:Skills;
     Experience:ExpDataObj[];
     Education:EducationObj[];
+    Certifications:Certification[]
  }
  
  
@@ -60,10 +72,11 @@ const ResumeCont = () => {
             ContactInfo={ResumeData.ContactInfo}
             Experience={ResumeData.Experience}
             Education={ResumeData.Education}
+            Certifications={ResumeData.Certifications}
         />
     );
     
 }
 export default ResumeCont;
 
-export type {ResumeCompProps,ExpDataProps,ContactProps,SkillsProps,EducationProps };
+export type {ResumeCompProps,ExpDataProps,ContactProps,SkillsProps,EducationProps,CertificationsProps };

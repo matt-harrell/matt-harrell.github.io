@@ -52,6 +52,14 @@
             ]
         }
     ],
+    "Certifications":[
+        {
+            "title":"Front-End Engineer",
+            "link":"https://www.codecademy.com/profiles/matthewHarrell0112636426/certificates/2682884a0719474f96407efe432fdd87",
+            "provider":"Codecademy",
+            "year":"March 2023"
+        }
+    ],
     "Education":[
         {
             "level":"Master of Arts in Interactive Media",
