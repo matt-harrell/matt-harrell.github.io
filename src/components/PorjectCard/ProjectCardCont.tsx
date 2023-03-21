@@ -32,16 +32,16 @@ const ProjectCardCont = (props:ProjectCardContProps) => {
 
     return (
     <ProjectCardComp 
-    title={Project?.title.thumbnail}
-    description={Project?.introSentence}
-    pathURL={pathURL}
-    imageThumbnail={Project?.images?.thumbnail}
-    sizeXS={props.sizeXS}
-    sizeSM={props.sizeSM}
-    sizeMD={props.sizeMD}
-    order={props.order}
-    customClass={props.customClass}
-    style={props.style}
+        title={Project?.title.thumbnail}
+        description={Project?.introSentence}
+        pathURL={pathURL}
+        imageThumbnail={Project?.images?.thumbnail}
+        sizeXS={props.sizeXS}
+        sizeSM={props.sizeSM}
+        sizeMD={props.sizeMD}
+        order={props.order}
+        customClass={props.customClass}
+        style={props.style}
     
     />
     );

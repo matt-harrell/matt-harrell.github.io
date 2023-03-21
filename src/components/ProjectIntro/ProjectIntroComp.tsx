@@ -26,11 +26,23 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
             <Grid container spacing={{ xs: 2, md: 3 }}>
                 
                 <Grid item xs={12} md={6} sx={{display:"flex"}}>
-                    <img
-                        className='img projectImg' 
-                        src={`/assets/images/projects/${props.imagePath}/${props.image}`} 
-                        alt=""
-                    />
+                    {props.video === undefined ?
+                        <img
+                            className='img projectImg' 
+                            src={`/assets/images/projects/${props.imagePath}/${props.image}`} 
+                            alt=""
+                        />
+                        :
+                        <iframe width="560" height="315" 
+                            src="https://www.youtube.com/embed/PB0JbyY5fK4" 
+                            title="YouTube video player"  
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowFullScreen
+                            frameBorder={0}
+                        >
+                        </iframe>
+                    }
+                    
                 </Grid>
 
                 <Grid item xs={12} md={6}>

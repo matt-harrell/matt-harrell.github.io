@@ -20,6 +20,7 @@ interface links {
     title?:string;
     skills?:string[] | undefined;
     image?:string;
+    video?:string;
     imagePath?:string;
     Desc?:string;
     linksElement?: JSX.Element;
@@ -130,12 +131,14 @@ const ProjoctIntroCont = (props:ProjectIntroContProps) =>{
     } else {
         skillsElement = skillsDouble;
     }
+
     
     return(
         <ProjectIntroComp
             title={Project?.title.page}
             skills={Project?.skills}
             image={Project?.images.main || Project?.images.thumbnail}
+            video={Project?.video?.demo}
             imagePath={Project?.title.thumbnail.replaceAll(' ', '-').toLowerCase()}
             Desc={Project?.description}
             linksElement={linksElement}
