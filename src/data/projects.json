@@ -29,6 +29,33 @@
     },
     {
         "title": {
+            "thumbnail":"Song Profiler",
+            "page":"DND Encounter Creator"
+        },
+        "introSentence":"A React app using song data from Spotify",
+        "description":"This app will show the users top songs and the Spotify audio profile for each song. This app uses 5 categories to show the audio profile for each song.",
+        "images":{
+            "thumbnail":"Song profiler logo.jpg"
+        },
+        "video":{
+            "demo":"https://www.loom.com/embed/4cdfbc2b8ff245179218c8081a1d309f"
+        },
+        "projectLinks":[
+            {
+            "link":"https://github.com/matt-harrell/song-profiler",
+            "text":"GitHub"
+            }
+        ],
+        "skills":[
+            "React",
+            "Redux",
+            "D3",
+            "Material UI",
+            "API"
+        ]
+    },
+    {
+        "title": {
             "thumbnail":"PWA",
             "page":"Progressive Web App"
         },
@@ -105,27 +132,6 @@
             "JavaScript",
             "JQuery",
             "GreenSock"
-        ]
-    },
-    {
-        "title": {
-            "thumbnail":"Chrome Extension",
-            "page":"Chrome Extension"
-        },
-        "introSentence":"A custom Chrome extension.",
-        "description":"This is an extension that can remove cookies from the current webpage with the press of the “g” key.",
-        "images":{
-            "thumbnail":"chrome-ext-code.jpg"
-        },
-        "projectLinks":[
-            {
-            "link":"https://github.com/matt-harrell/Cookie-Monster-v6.7-Final-",
-            "text":"GitHub"
-            }
-        ],
-        "skills":[
-            "HTML",
-            "JavaScript"
         ]
     }
 ]
