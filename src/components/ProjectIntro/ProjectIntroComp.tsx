@@ -1,4 +1,5 @@
 import {Grid,Typography, Container } from '@mui/material';
+import parse from 'html-react-parser';
 
 import { ProjectIntroContProps } from './ProjectIntroCont';
 
@@ -55,7 +56,7 @@ const ProjectIntroComp = (props:ProjectIntroContProps) => {
                         Description
                     </Typography>
                     <Typography variant='body1' component='p' className='desc'>
-                        {props.Desc}
+                        {parse(props.Desc || '')}
                     </Typography>
                 </Grid>
 
